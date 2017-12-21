@@ -44,6 +44,8 @@ namespace iClinical.Model
     public bool IsDrinker { get; set; }
     public bool HasHighBloodPressure { get; set; }
     public bool HasHighCholesterol { get; set; }
+    public string Studies { get; set; }
+
 
   }
 }
