@@ -1,0 +1,8 @@
+<h1>matches view</h1>
+<div ng-repeat="item in apiResponse">
+<p>{{item.public_title}}</p>
+<p ng-repeat="x in item.conditions">{{x.name}} {{x.url}}</p>
+<p>{{item.gender}}</p>
+<p>{{item.interventions[0].type}}</p>
+<p>{{item.organisations[0].name}}</p>
+</div>

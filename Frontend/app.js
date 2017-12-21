@@ -16,6 +16,11 @@ app.config(function ($stateProvider, $urlRouterProvider) {
       templateUrl: "./views/user.html",
       controller: "userController"
     })
+  .state("matches", {
+    url: "/matches",
+    templateUrl: "./views/matches.html",
+    controller: "matchController"
+  })
 
 
 })
