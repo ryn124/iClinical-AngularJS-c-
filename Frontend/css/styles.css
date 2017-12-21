@@ -16,6 +16,10 @@
   margin-top: 50px;
 }
 
-.loginLogo{
+.signUpForm{
+  margin-top: 70px;
+}
 
+.userFormRequired{
+  color: red;
 }

@@ -6,16 +6,22 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
   $stateProvider
 
-  .state("home", {
-    url: "/login",
-    templateUrl: "./views/login.html",
-    controller: "loginController"
-  })
+    .state("home", {
+      url: "/login",
+      templateUrl: "./views/login.html",
+      controller: "loginController"
+    })
     .state("user", {
       url: "/user",
       templateUrl: "./views/user.html",
       controller: "userController"
     })
+    .state("signup", {
+      url: "/signup",
+      templateUrl: "./views/signup.html",
+      controller: "userController"
+    })
+
 
 
 })
