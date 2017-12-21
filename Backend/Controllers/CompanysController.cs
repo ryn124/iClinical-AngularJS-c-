@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace iClinical.Controllers
 {
-    [Route ("api/Companies")]
+    [Route ("api/companies")]
     public class CompanysController : Controller
     {
         private readonly iClinicalContext _context;
@@ -20,16 +20,16 @@ namespace iClinical.Controllers
                 _context.Companys.Add (new Company ()
                 {
                     Id = 1, CompanyName = "Alternative Studes INC", CompanyUserName = "ALTMEDINC", CompanyPassword = "iclinical", Phone = "7145555555", Desciption = "We are Alternative Studies INC. We collectivley research hundreds on new studies daily. Thank you for your intrest in our Company.",
-                        Studies = "", Email = "ALTMEDINC@iclinical.com", Location = "Santa Ana"
+                        Studies = "", Email = "ALTMEDINC@iclinical.com", City = "Santa Ana"
                 });
                 _context.Companys.Add (new Company ()
                 {
                     Id = 2, CompanyName = "Nutrition Studes INC", CompanyUserName = "NutriStudies", CompanyPassword = "iclinical", Phone = "7143333333", Desciption = "We are Nutri Studies INC. We collectivley research hundreds on new studies daily. Thank you for your intrest in our Company.",
-                        Studies = "", Email = "NUTMEDINC@iclinical.com", Location = "Los Angeles"
+                        Studies = "", Email = "NUTMEDINC@iclinical.com", City = "Los Angeles"
                 });
                 _context.Companys.Add (new Company ()
                 {
-                    Id = 3, CompanyName = "HealthAmerica Studes INC", CompanyUserName = "HELLAM", CompanyPassword = "iclinical", Phone = "3234444444", Desciption = "We are HealthAmerica Studies INC. We collectivley research hundreds on new studies daily. Thank you for your intrest in our Company.", Studies = "", Email = "HellAM@iclinical.com", Location = "New York"
+                    Id = 3, CompanyName = "HealthAmerica Studes INC", CompanyUserName = "HELLAM", CompanyPassword = "iclinical", Phone = "3234444444", Desciption = "We are HealthAmerica Studies INC. We collectivley research hundreds on new studies daily. Thank you for your intrest in our Company.", Studies = "", Email = "HellAM@iclinical.com", City = "New York"
                 });
         _context.SaveChanges ();
     }

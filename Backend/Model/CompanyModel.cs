@@ -16,6 +16,6 @@ namespace iClinical.Model
     public string Desciption { get; set; }
     public string Studies { get; set; }
     public string Email { get; set; }
-    public string Location { get; set; }
+    public string City { get; set; }
   }
 }

@@ -15,7 +15,7 @@ namespace iClinical.Model
     public string Email { get; set; }
     public string Password { get; set; }
     public string Gender { get; set; }
-    public string Location { get; set; }
+    public string City { get; set; }
     public bool Blood { get; set; }
     public bool Cancer { get; set; }
     public bool Cardiovascular { get; set; }
