@@ -15,6 +15,9 @@ namespace iClinical
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<Company> Companys { get; set; }
+        public DbSet<Study> Studys { get; set; }
+
     }
 
 }
