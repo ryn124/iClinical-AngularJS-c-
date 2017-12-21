@@ -1,4 +1,4 @@
-var app = angular.module("spotApp", ['ui.router', 'ui.bootstrap']);
+var app = angular.module("iClinical", ['ui.router']);
 
 app.config(function ($stateProvider, $urlRouterProvider) {
 
@@ -6,11 +6,15 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
   $stateProvider
 
+  .state("home", {
+    url: "/login",
+    templateUrl: "./views/login.html",
+    controller: "loginController"
+  })
     .state("user", {
       url: "/user",
       templateUrl: "./views/user.html",
       controller: "userController"
-
     })
 
 

@@ -1,0 +1,20 @@
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.loginContainer{
+  margin-top: 200px; 
+  width: 285px;
+  height: 310px;
+  border: 1px solid gray; 
+}
+
+.username{
+  margin-top: 50px;
+}
+
+.loginLogo{
+
+}
