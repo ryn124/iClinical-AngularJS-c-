@@ -21,7 +21,7 @@ namespace iClinical.Controllers
             {
                 _context.Users.Add (new User ()
                 {
-                    Id = 1, FirstName = "Harrison", LastName = "Spain", Age = 34, Email = "harry@iclinical.com", Password = "iclinical", Gender = "Male", City = "Los Angeles", Blood = false, Cancer = false, Cardiovascular = false, Congenital = false, Ear = false, Eye = false, Infection = false, Inflammatory = false, Injuries = false, MentalHealth = false, Metabolic = false, Musculoskeletal = false, Neurological = false, OralGastro = false, Renal = false, Reproduction = false, Respiratory = false, Skin = false, Stroke = false, Generic = false, Other = "None", IsObese = false, IsSedentary = false, HasPoorDiet = false, IsSmoker = false, IsDrinker = false, HasHighBloodPressure = false, HasHighCholesterol = false, Studies = ""
+                    Id = 1, FirstName = "Harry", LastName = "Dude", Age = 34, Email = "harry@iclinical.com", Password = "iclinical", Gender = "Male", City = "Los Angeles", Blood = false, Cancer = true, Cardiovascular = false, Congenital = false, Ear = false, Eye = false, Infection = false, Inflammatory = false, Injuries = false, MentalHealth = false, Metabolic = false, Musculoskeletal = false, Neurological = true, OralGastro = false, Renal = false, Reproduction = false, Respiratory = true, Skin = false, Stroke = false, Generic = false, Other = "None", IsObese = true, IsSedentary = false, HasPoorDiet = false, IsSmoker = true, IsDrinker = false, HasHighBloodPressure = false, HasHighCholesterol = false, Studies = ""
                 });
                 _context.Users.Add (new User ()
                 {
