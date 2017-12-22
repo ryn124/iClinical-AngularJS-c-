@@ -9,6 +9,16 @@ app.controller("matchController", function ($scope, $state, $stateParams, matchS
         console.log($scope.apiResponse[0].conditions[0]);
       })
   }
+  $scope.getUsers = function() {
+    matchService.getUsers()
+      .then(function (response){
+        console.log(response);
+        $scope.currentUser = response.data[0];
+      })
+  }
+  $scope.currentUser
+  $scope.getUsers();
+
 
   $scope.clinicalSearch();
 
