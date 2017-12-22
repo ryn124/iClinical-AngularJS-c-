@@ -4,210 +4,213 @@
 
     <div class="container formContainer">
       <div class="col-md-6">
-        <label>First Name</label>
+        <label>FIRST NAME</label>
         <input type="text" class="form-control" ng-model="user.firstName">
         <p class="userFormRequired" ng-hide="firstNameRequired">Required!</p>
       </div>
 
       <div class="col-md-6">
-        <label>Last Name</label>
+        <label>LAST NAME</label>
         <input type="text" class="form-control" ng-model="user.lastName">
         <p class="userFormRequired" ng-hide="lastNameRequired">Required!</p>
       </div>
     </div>
 
     <div class="container formContainer">
-      <div class="col-md-3">
-        <label>Age</label>
+      <div class="col-md-4">
+        <label>AGE</label>
         <input type="text" class="form-control" ng-model="user.age">
         <p class="userFormRequired" ng-hide="DOBRequired">Required!</p>
       </div>
 
-      <div class="container formContainer">
-        <div class="col-md-3">
-          <label>Gender</label>
-          <input type="text" class="form-control" ng-model="user.gender">
-          <p class="userFormRequired" ng-hide="genderRequired">Required!</p>
-        </div>
 
-        <div class="col-md-2">
-          <label>email address</label>
-          <input type="text" class="form-control" ng-model="user.email">
-          <p class="userFormRequired" ng-hide="emailRequired">Required!</p>
-        </div>
-
-        <div class="col-md-2">
-          <label>Create a Password</label>
-          <input type="text" class="form-control" ng-model="user.password">
-          <p class="userFormRequired" ng-hide="passwordRequired">Required!</p>
-        </div>
+      <div class="col-md-4">
+        <label>GENDER</label>
+        <input type="text" class="form-control" ng-model="user.gender">
+        <p class="userFormRequired" ng-hide="genderRequired">Required!</p>
       </div>
 
-      <div class="container formContainer">
-        <div class="col-md-6">
-          <label>City</label>
-          <input type="text" class="form-control" ng-model="user.city">
-          <p class="userFormRequired" ng-hide="locationRequired">Required!</p>
-        </div>
+
+      <div class="col-md-4">
+        <label>CITY</label>
+        <input type="text" class="form-control" ng-model="user.city">
+        <p class="userFormRequired" ng-hide="locationRequired">Required!</p>
+      </div>
+    </div>
+
+    <div class="container formContainer">
+      <div class="col-md-6">
+        <label>EMAIL</label>
+        <input type="text" class="form-control" ng-model="user.email">
+        <p class="userFormRequired" ng-hide="emailRequired">Required!</p>
       </div>
 
+      <div class="col-md-6">
+        <label>PASSWORD</label>
+        <input type="text" class="form-control" ng-model="user.password">
+        <p class="userFormRequired" ng-hide="passwordRequired">Required!</p>
+      </div>
+    </div>
+
+
+
+    <div class="container">
+      <h3>Please check all conditions that apply:</h3>
+    </div>
+
+    <div class="container conditions-form">
+      <div class="form-check col-md-2">
+        <label class="form-check-label">
+          <input class="form-check-input" type="checkbox" ng-model="user.blood"> Blood
+        </label>
+      </div>
+      <div class="form-check col-md-2">
+        <label class="form-check-label">
+          <input class="form-check-input" type="checkbox" ng-model="user.cancer"> Cancer
+        </label>
+      </div>
+      <div class="form-check col-md-2">
+        <label class="form-check-label">
+          <input class="form-check-input" type="checkbox" ng-model="user.cardio"> Cardiovascular
+        </label>
+      </div>
+      <div class="form-check col-md-2">
+        <label class="form-check-label">
+          <input class="form-check-input" type="checkbox" ng-model="user.congenital"> Congenital
+        </label>
+      </div>
+      <div class="form-check col-md-2">
+        <label class="form-check-label">
+          <input class="form-check-input" type="checkbox" ng-model="user.ear"> Ear
+        </label>
+      </div>
+      <div class="form-check col-md-2">
+        <label class="form-check-label">
+          <input class="form-check-input" type="checkbox" ng-model="user.infection"> Infection
+        </label>
+      </div>
+
+      <div class="form-check col-md-2">
+        <label class="form-check-label">
+          <input class="form-check-input" type="checkbox" ng-model="user.inflame"> Inflamatory
+        </label>
+      </div>
+      <div class="form-check col-md-2">
+        <label class="form-check-label">
+          <input class="form-check-input" type="checkbox" ng-model="user.injury"> Injuries
+        </label>
+      </div>
+      <div class="form-check col-md-2">
+        <label class="form-check-label">
+          <input class="form-check-input" type="checkbox" ng-model="user.mental"> Mental Health
+        </label>
+      </div>
+      <div class="form-check col-md-2">
+        <label class="form-check-label">
+          <input class="form-check-input" type="checkbox" ng-model="user.metabolic"> Metabolic
+        </label>
+      </div>
+      <div class="form-check col-md-2">
+        <label class="form-check-label">
+          <input class="form-check-input" type="checkbox" ng-model="user.muscle"> Musculoskelatal
+        </label>
+      </div>
+      <div class="form-check col-md-2">
+        <label class="form-check-label">
+          <input class="form-check-input" type="checkbox" ng-model="user.brain"> Neurological
+        </label>
+      </div>
+
+      <div class="form-check col-md-2">
+        <label class="form-check-label">
+          <input class="form-check-input" type="checkbox" ng-model="user.oral"> Oral
+        </label>
+      </div>
+      <div class="form-check col-md-2">
+        <label class="form-check-label">
+          <input class="form-check-input" type="checkbox" ng-model="user.renal"> Renal
+        </label>
+      </div>
+      <div class="form-check col-md-2">
+        <label class="form-check-label">
+          <input class="form-check-input" type="checkbox" ng-model="user.reproductive"> Reproductive
+        </label>
+      </div>
+      <div class="form-check col-md-2">
+        <label class="form-check-label">
+          <input class="form-check-input" type="checkbox" ng-model="user.lung"> Respiratory
+        </label>
+      </div>
+      <div class="form-check col-md-2">
+        <label class="form-check-label">
+          <input class="form-check-input" type="checkbox" ng-model="user.skin"> Skin
+        </label>
+      </div>
+      <div class="form-check col-md-2">
+        <label class="form-check-label">
+          <input class="form-check-input" type="checkbox" ng-model="user.stroke"> Stroke
+        </label>
+      </div>
+
+
+      <div class="form-check col-md-2">
+        <label class="form-check-label">
+          <input class="form-check-input" type="checkbox" ng-model="user.generic"> Generic
+        </label>
+      </div>
       <div class="container">
-        <h3>Check all conditions that apply</h3>
-      </div>
-
-      <div class="container conditions-form">
-        <div class="form-check col-md-2">
-          <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" ng-model="user.blood"> Blood
-          </label>
-        </div>
-        <div class="form-check col-md-2">
-          <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" ng-model="user.cancer"> Cancer
-          </label>
-        </div>
-        <div class="form-check col-md-2">
-          <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" ng-model="user.cardio"> Cardiovascular
-          </label>
-        </div>
-        <div class="form-check col-md-2">
-          <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" ng-model="user.congenital"> Congenital
-          </label>
-        </div>
-        <div class="form-check col-md-2">
-          <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" ng-model="user.ear"> Ear
-          </label>
-        </div>
-        <div class="form-check col-md-2">
-          <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" ng-model="user.infection"> Infection
-          </label>
-        </div>
-
-        <div class="form-check col-md-2">
-          <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" ng-model="user.inflame"> Inflamatory
-          </label>
-        </div>
-        <div class="form-check col-md-2">
-          <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" ng-model="user.injury"> Injuries
-          </label>
-        </div>
-        <div class="form-check col-md-2">
-          <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" ng-model="user.mental"> Mental Health
-          </label>
-        </div>
-        <div class="form-check col-md-2">
-          <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" ng-model="user.metabolic"> Metabolic
-          </label>
-        </div>
-        <div class="form-check col-md-2">
-          <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" ng-model="user.muscle"> Musculoskelatal
-          </label>
-        </div>
-        <div class="form-check col-md-2">
-          <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" ng-model="user.brain"> Neurological
-          </label>
-        </div>
-
-        <div class="form-check col-md-2">
-          <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" ng-model="user.oral"> Oral
-          </label>
-        </div>
-        <div class="form-check col-md-2">
-          <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" ng-model="user.renal"> Renal
-          </label>
-        </div>
-        <div class="form-check col-md-2">
-          <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" ng-model="user.reproductive"> Reproductive
-          </label>
-        </div>
-        <div class="form-check col-md-2">
-          <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" ng-model="user.lung"> Respiratory
-          </label>
-        </div>
-        <div class="form-check col-md-2">
-          <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" ng-model="user.skin"> Skin
-          </label>
-        </div>
-        <div class="form-check col-md-2">
-          <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" ng-model="user.stroke"> Stroke
-          </label>
-        </div>
-
-
-        <div class="form-check col-md-2">
-          <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" ng-model="user.generic"> Generic
-          </label>
-        </div>
-
         <div class="col-md-2">
           <label>Other</label>
           <input type="text" class="form-control" ng-model="user.otherCondition">
         </div>
       </div>
+    </div>
+    <div class="container">
+      <h3>Please check all lifestyle factors that apply:</h3>
+    </div>
 
-      <div class="container">
-        <h3>Check all lifestyle factors that apply</h3>
+    <div class="container conditions-form">
+      <div class="form-check col-md-2">
+        <label class="form-check-label">
+          <input class="form-check-input" type="checkbox" ng-model="user.obese"> Obesity
+        </label>
       </div>
-
-      <div class="container conditions-form">
-        <div class="form-check col-md-2">
-          <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" ng-model="user.obese"> Obesity
-          </label>
-        </div>
-        <div class="form-check col-md-2">
-          <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" ng-model="user.sedentary"> Sedentary
-          </label>
-        </div>
-        <div class="form-check col-md-2">
-          <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" ng-model="user.diet"> Unhealthy Diet
-          </label>
-        </div>
-        <div class="form-check col-md-2">
-          <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" ng-model="user.smoker"> Tobacco User
-          </label>
-        </div>
-        <div class="form-check col-md-2">
-          <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" ng-model="user.drinker"> Drinker
-          </label>
-        </div>
-        <div class="form-check col-md-2">
-          <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" ng-model="user.bloodPressure"> High Blood Pressure
-          </label>
-        </div>
-        <div class="form-check col-md-2">
-          <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" ng-model="user.cholesterol"> High Cholesterol
-          </label>
-        </div>
+      <div class="form-check col-md-2">
+        <label class="form-check-label">
+          <input class="form-check-input" type="checkbox" ng-model="user.sedentary"> Sedentary
+        </label>
       </div>
-
-      <!-- end form -->
-      <div class="submitDiv container">
-        <button class="btn btn-primary pull-right" ng-click="newUserSubmit()">Submit</button>
-
+      <div class="form-check col-md-2">
+        <label class="form-check-label">
+          <input class="form-check-input" type="checkbox" ng-model="user.diet"> Unhealthy Diet
+        </label>
       </div>
+      <div class="form-check col-md-2">
+        <label class="form-check-label">
+          <input class="form-check-input" type="checkbox" ng-model="user.smoker"> Tobacco User
+        </label>
+      </div>
+      <div class="form-check col-md-2">
+        <label class="form-check-label">
+          <input class="form-check-input" type="checkbox" ng-model="user.drinker"> Drinker
+        </label>
+      </div>
+      <div class="form-check col-md-2">
+        <label class="form-check-label">
+          <input class="form-check-input" type="checkbox" ng-model="user.bloodPressure"> High Blood Pressure
+        </label>
+      </div>
+      <div class="form-check col-md-2">
+        <label class="form-check-label">
+          <input class="form-check-input" type="checkbox" ng-model="user.cholesterol"> High Cholesterol
+        </label>
+      </div>
+    </div>
+
+    <!-- end form -->
+    <div class="submitDiv container">
+      <button class="btn btn-primary pull-right" ng-click="newUserSubmit()">Submit</button>
 
     </div>
+
+  </div>
