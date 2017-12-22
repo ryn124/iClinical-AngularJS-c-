@@ -12,7 +12,6 @@ namespace iClinical.Model
     public string StudyTitle { get; set; }
     public string BriefSummary { get; set; }
     public string  Gender{ get; set; }
-    public string Location { get; set; }
     public string Status { get; set; }
     public int SampleSize { get; set; }
   }
