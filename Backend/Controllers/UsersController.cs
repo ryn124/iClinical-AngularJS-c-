@@ -11,10 +11,12 @@ namespace iClinical.Controllers
     [Route ("api/users")]
     public class UsersController : Controller
     {
+       
         private readonly iClinicalContext _context;
         public UsersController (iClinicalContext context)
         {
             _context = context;
+            
             if (_context.Users.Count () == 0)
             {
                 _context.Users.Add (new User ()
@@ -57,7 +59,8 @@ namespace iClinical.Controllers
         // POST api/values
         [HttpPost]
         public User Post ([FromBody] User s)
-        {
+        {   
+            s.Id = _context.Users.Count()+1;
             _context.Users.Add (s);
             _context.SaveChanges ();
             return s;

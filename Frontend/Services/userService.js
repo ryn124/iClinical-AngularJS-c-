@@ -8,7 +8,6 @@ app.service("userService", function ($http) {
     if (id == "" || id == undefined || id == null) {
       //create empty user object pass user object to callback
       var user = {
-        id: 5,
         firstName: "",
         lastName: "",
         age: "",
@@ -35,7 +34,7 @@ app.service("userService", function ($http) {
         skin: false,
         stroke: false,
         generic: false,
-        other: false,
+        other: "none",
         obese: false,
         sendentary: false,
         diet: false,
