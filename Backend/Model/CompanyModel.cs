@@ -13,8 +13,8 @@ namespace iClinical.Model
     public string CompanyUserName { get; set; }
     public string CompanyPassword { get; set; }
     public string Phone { get; set; }
-    public string Desciption { get; set; }
-    public string Studies { get; set; }
+    public string Description { get; set; }
+    public List<Study> CompanyStudys { get; set; }
     public string Email { get; set; }
     public string City { get; set; }
   }

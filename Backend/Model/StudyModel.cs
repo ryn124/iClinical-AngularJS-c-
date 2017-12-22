@@ -11,9 +11,6 @@ namespace iClinical.Model
     public int Id { get; set; }
     public string StudyTitle { get; set; }
     public string Summary { get; set; }
-    public string  Gender{ get; set; }
-    public int MinAge { get; set; }
-    public int MaxAge { get; set; }
     public string Status { get; set; }
     public string City { get; set; }
   }

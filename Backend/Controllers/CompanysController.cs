@@ -19,17 +19,17 @@ namespace iClinical.Controllers
             {
                 _context.Companys.Add (new Company ()
                 {
-                    Id = 1, CompanyName = "Alternative Studes INC", CompanyUserName = "ALTMEDINC", CompanyPassword = "iclinical", Phone = "7145555555", Desciption = "We are Alternative Studies INC. We collectivley research hundreds on new studies daily. Thank you for your intrest in our Company.",
-                        Studies = "", Email = "ALTMEDINC@iclinical.com", City = "Santa Ana"
+                    Id = 1, CompanyName = "Alternative Studes INC", CompanyUserName = "ALTMEDINC", CompanyPassword = "iclinical", Phone = "7145555555", Description = "We are Alternative Studies INC. We collectivley research hundreds on new studies daily. Thank you for your intrest in our Company.",
+                        [], Email = "ALTMEDINC@iclinical.com", City = "Santa Ana"
                 });
                 _context.Companys.Add (new Company ()
                 {
-                    Id = 2, CompanyName = "Nutrition Studes INC", CompanyUserName = "NutriStudies", CompanyPassword = "iclinical", Phone = "7143333333", Desciption = "We are Nutri Studies INC. We collectivley research hundreds on new studies daily. Thank you for your intrest in our Company.",
-                        Studies = "", Email = "NUTMEDINC@iclinical.com", City = "Los Angeles"
+                    Id = 2, CompanyName = "Nutrition Studes INC", CompanyUserName = "NutriStudies", CompanyPassword = "iclinical", Phone = "7143333333", Description = "We are Nutri Studies INC. We collectivley research hundreds on new studies daily. Thank you for your intrest in our Company.",
+                        [], Email = "NUTMEDINC@iclinical.com", City = "Los Angeles"
                 });
                 _context.Companys.Add (new Company ()
                 {
-                    Id = 3, CompanyName = "HealthAmerica Studes INC", CompanyUserName = "HELLAM", CompanyPassword = "iclinical", Phone = "3234444444", Desciption = "We are HealthAmerica Studies INC. We collectivley research hundreds on new studies daily. Thank you for your intrest in our Company.", Studies = "", Email = "HellAM@iclinical.com", City = "New York"
+                    Id = 3, CompanyName = "HealthAmerica Studes INC", CompanyUserName = "HELLAM", CompanyPassword = "iclinical", Phone = "3234444444", Description = "We are HealthAmerica Studies INC. We collectivley research hundreds on new studies daily. Thank you for your intrest in our Company.", [], Email = "HellAM@iclinical.com", City = "New York"
                 });
         _context.SaveChanges ();
     }
