@@ -7,11 +7,12 @@ app.service("userService", function ($http) {
   this.getUsers = function () {
     return $http.get("http://localhost:5000/api/users")
   }
-  // current user logged in
+  // current user logged in, 0 means no one is logged on
   var _currentUserId = 0;
   this.setCurrentUser = function (id){
     _currentUserId = id;
   }
+  // returns logged on users' id
   this.currentUserReturn = function(){
     return _currentUserId;
   }
