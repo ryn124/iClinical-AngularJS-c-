@@ -1,10 +1,12 @@
 <h1>matches view</h1>
-{{currentUser}}
-{{apiResponse[0].gender}}
-<!-- <div ng-repeat="item in apiResponse">
-<p>{{item.public_title}}</p>
-<p ng-repeat="x in item.conditions">{{x.name}} {{x.url}}</p>
-<p>{{item.gender}}</p>
-<p>{{item.interventions[0].type}}</p>
-<p>{{item.organisations[0].name}}</p>
-</div> -->
+<div class="container">
+    <div class="studies-container" ng-repeat="item in apiResponse">
+      <p><strong>Description: </strong>{{item.brief_summary}}</p>      
+      <p ng-repeat="condition in item.conditions"><strong>Conditions: </strong>{{condition.name}} {{condition.url}}</p>
+      <p><strong>Qualifying Gender: </strong>{{item.gender}}</p>
+      <p ng-repeat="intervention in item.interventions"><strong>Intervention: </strong>{{intervention.type}}</p>
+      <p ng-repeat="oraganisation in item.organisations"><strong>Organisation: </strong>{{organisation.name}}</p>
+      <p><strong>Status: </strong>{{item.status}}</p>
+
+    </div>
+</div>

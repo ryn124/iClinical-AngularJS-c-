@@ -8,10 +8,10 @@ app.config(function ($stateProvider, $urlRouterProvider) {
       templateUrl: "./views/login.html",
       controller: "loginController"
     })
-    .state("user", {
-      url: "/user",
-      templateUrl: "./views/user.html",
-      controller: "userController"
+    .state("dashboard", {
+      url: "/dashboard",
+      templateUrl: "./views/dashboard.html",
+      controller: "dashboardController"
     })
     .state("userSignup", {
       url: "/usersignup",

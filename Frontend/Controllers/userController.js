@@ -72,7 +72,6 @@ app.controller("userController", function ($scope, $state, $stateParams, userSer
     }
     //if everything is filled out in signup form this funciton is run and inputs passed in 
     else {
-      
         userService.newUserForm($scope.user)
       //   // $state.go('app.userCard', {id: userService.getNewId()})
     

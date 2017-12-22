@@ -1,9 +1,25 @@
 app.service("userService", function ($http) {
-
+  // posts a user
   this.newUserForm = function (x) {
     return $http.post("http://localhost:5000/api/users", x)
   }
-
+  // gets all users
+  this.getUsers = function () {
+    return $http.get("http://localhost:5000/api/users")
+  }
+  // current user logged in
+  var _currentUserId = 0;
+  this.setCurrentUser = function (id){
+    _currentUserId = id;
+  }
+  this.currentUserReturn = function(){
+    return _currentUserId;
+  }
+  this.getCurrentUserInfo = function(){
+    console.log(_currentUserId)
+    return $http.get("http://localhost:5000/api/users/" + _currentUserId)
+  }
+  // get individual user
   this.getUserById = function (id, callback) {
     if (id == "" || id == undefined || id == null) {
       //create empty user object pass user object to callback
