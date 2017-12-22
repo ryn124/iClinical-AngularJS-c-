@@ -1,7 +1,7 @@
 app.service("userService", function ($http) {
 
   this.newUserForm = function (x) {
-    return $http.post("http://localhost:5000/api/user", x)
+    return $http.post("http://localhost:5000/api/users", x)
   }
 
   this.getUserById = function (id, callback) {
