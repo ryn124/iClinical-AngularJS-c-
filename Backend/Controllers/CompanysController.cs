@@ -19,8 +19,7 @@ namespace iClinical.Controllers
             {
                 _context.Companies.Add (new Company ()
                 {
-                    Id = 1, CompanyName = "Alternative Studes INC", CompanyUserName = "ALTMEDINC", CompanyPassword = "iclinical", Phone = "7145555555", Description = "We are Alternative Studies INC. We collectivley research hundreds on new studies daily. Thank you for your intrest in our Company.",
-                        [], Email = "ALTMEDINC@iclinical.com", City = "Santa Ana"
+                    Id = 1, CompanyName = "Alternative Studes INC", CompanyUserName = "ALTMEDINC", CompanyPassword = "iclinical", Phone = "7145555555", Description = "We are Alternative Studies INC. We collectivley research hundreds on new studies daily. Thank you for your intrest in our Company.", Studies [], Email = "ALTMEDINC@iclinical.com", City = "Santa Ana"
                 });
                 _context.Companies.Add (new Company ()
                 {

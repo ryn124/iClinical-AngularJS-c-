@@ -19,13 +19,13 @@ namespace iClinical.Controllers
             {
                 _context.Studies.Add (new Study ()
                 {
-                    Id = 1, StudyTitle = "Lung Cancer Research Decisions", BriefSummary = "A study for Lung Cancer Patients that need to make the decision of treatment and research.", Gender = "Both", MinAge= 25, MaxAge= 65, Location = "United States", Status = "recruiting", SampleSize = 15, CompanyId = 1});
+                    Id = 1, StudyTitle = "Lung Cancer Research Decisions", BriefSummary = "A study for Lung Cancer Patients that need to make the decision of treatment and research.", Gender = "Both", Status = "recruiting", SampleSize = 15 });
                 _context.Studies.Add (new Study ()
                 {
-                    Id = 2, StudyTitle = "Osteoperosis in Women under 23", BriefSummary = "A bone study that recruits young women for a possible cure of Osteoperosis at a young age", Gender = "Female", MinAge= 0, MaxAge= 23, Location = "United States", Status = "not_recruiting", SampleSize = 100, CompanyId = 2});
+                    Id = 2, StudyTitle = "Osteoperosis in Women under 23", BriefSummary = "A bone study that recruits young women for a possible cure of Osteoperosis at a young age", Gender = "Female", Status = "not_recruiting", SampleSize = 100 });
                 _context.Studies.Add (new Study ()
                 {
-                    Id = 3, StudyTitle = "Testicular Cancer in Men with Animal Besties", BriefSummary = "A study that contiunes research in older men that have testicular cancer and beleive the cure can be an animal companion.", Gender = "Male", MinAge= 45, MaxAge = 90, Location = "United Kingdom", Status = "recruiting", SampleSize = 200, CompanyId = 3});
+                    Id = 3, StudyTitle = "Testicular Cancer in Men with Animal Besties", BriefSummary = "A study that contiunes research in older men that have testicular cancer and beleive the cure can be an animal companion.", Gender = "Male", Status = "recruiting", SampleSize = 200});
                 _context.SaveChanges ();
             }
         }
