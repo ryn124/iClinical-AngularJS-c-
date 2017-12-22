@@ -1,0 +1,51 @@
+<div class="signUpForm">
+  <h1 class="signUpHeader">Company Sign Up</h1>
+<div class="container formContainer">
+  <div class="col-md-6">
+    <label>Company Name</label>
+    <input type="text" class="form-control" ng-model="user.firstName">
+    <p class="userFormRequired" ng-hide="firstNameRequired">Required!</p>
+  </div>
+
+  <div class="col-md-6">
+    <label>Last Name</label>
+    <input type="text" class="form-control" ng-model="user.lastName">
+    <p class="userFormRequired" ng-hide="lastNameRequired">Required!</p>
+  </div>
+</div>
+
+<div class="container formContainer">
+  <div class="col-md-3">
+    <label>Age</label>
+    <input type="text" class="form-control" ng-model="user.age">
+    <p class="userFormRequired" ng-hide="DOBRequired">Required!</p>
+  </div>
+
+  <div class="container formContainer">
+    <div class="col-md-3">
+      <label>Gender</label>
+      <input type="text" class="form-control" ng-model="user.gender">
+      <p class="userFormRequired" ng-hide="genderRequired">Required!</p>
+    </div>
+
+    <div class="col-md-2">
+      <label>email address</label>
+      <input type="text" class="form-control" ng-model="user.email">
+      <p class="userFormRequired" ng-hide="emailRequired">Required!</p>
+    </div>
+
+    <div class="col-md-2">
+      <label>Create a Password</label>
+      <input type="text" class="form-control" ng-model="user.password">
+      <p class="userFormRequired" ng-hide="passwordRequired">Required!</p>
+    </div>
+  </div>
+
+  <div class="container formContainer">
+    <div class="col-md-6">
+      <label>City</label>
+      <input type="text" class="form-control" ng-model="user.city">
+      <p class="userFormRequired" ng-hide="locationRequired">Required!</p>
+    </div>
+  </div>
+  </div>

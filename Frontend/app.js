@@ -13,10 +13,15 @@ app.config(function ($stateProvider, $urlRouterProvider) {
       templateUrl: "./views/user.html",
       controller: "userController"
     })
-    .state("signup", {
-      url: "/signup",
-      templateUrl: "./views/signup.html",
+    .state("userSignup", {
+      url: "/usersignup",
+      templateUrl: "./views/userSignup.html",
       controller: "userController"
+    })
+    .state("companySignup", {
+      url: "/companysignup",
+      templateUrl: "./views/companySignup.html",
+      controller: "companyController"
     })
     .state("matches", {
       url: "/matches",
