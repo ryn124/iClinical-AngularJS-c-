@@ -21,35 +21,6 @@ app.controller("userController", function ($scope, $state, $stateParams, userSer
       console.log($scope.user)
     })
   }
-  // sets checkboxes to false by default
-  //   $scope.blood;
-  //   $scope.cancer;
-  //   $scope.cardio;
-  //   $scope.congenital;$scope.ear;
-  //   $scope.infection;
-  //   $scope.inflame;
-  //   use$scope.injury;
-  //   userFor$scope.mental;
-  //   user$scope.metabolic;
-  //   userForm.m$scope.muscle;
-  //   userFor$scope.brain;
-  //   userF$scope.oral;
-  //   $scope.renal;
-  //   userFor$scope.reproductive;
-  //   userFo$scope.lung;
-  // $scope.skin;
-  //   u$scope.stroke;
-  //   us$scope.generic;
-  //   $scope.other;
-  //   us$scope.obese;
-  //   userFo$scope.sendentary;
-  //   userFo$scope.diet;
-  //   use$scope.smoker;
-  //   user$scope.drinker;
-  //   userForm.hasHig$scope.bloodPressure;
-  //   userForm.hasH$scope.cholesterol;
-
-
 
   //submits signup form
   $scope.newUserSubmit = function () {
@@ -101,9 +72,6 @@ app.controller("userController", function ($scope, $state, $stateParams, userSer
     }
     //if everything is filled out in signup form this funciton is run and inputs passed in 
     else {
-
-
-      // var userForm = ({firstName: + $scope.firstName})
         userService.newUserForm($scope.user)
       //   // $state.go('app.userCard', {id: userService.getNewId()})
     

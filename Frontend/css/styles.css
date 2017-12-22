@@ -113,3 +113,23 @@ form[role=login]>div {
 	margin-top: -16px;
 	margin-bottom: 36px;
 }
+.dashboard-container{
+	border-radius: 10px;
+	border: 1px solid rgb(109, 109, 109);
+	background-color: white;
+	width: 70%;
+}
+.dashboard-name{
+	padding: 20px 0px 20px 0px;
+}
+.dashboard-button{
+	margin-top: 50px;
+	margin-bottom: 30px;
+}
+.studies-container{
+	border-radius: 10px;
+	border: 1px solid rgb(109, 109, 109);
+	background-color: white;
+	width: 80%;
+	padding: 5%;
+}

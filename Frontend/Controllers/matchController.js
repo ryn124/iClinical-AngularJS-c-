@@ -19,7 +19,8 @@ app.controller("matchController", function ($scope, $state, $stateParams, matchS
     matchService.getUsers()
       .then(function (response){
         var conds = [];
-               $scope.currentUser = response.data[0];
+        var userId = userService.currentUser();
+        $scope.currentUser = response.data[userId];
         console.log($scope.currentUser);
         // this is where the conditions check will to be added to the search
         if($scope.currentUser.cancer == true){
