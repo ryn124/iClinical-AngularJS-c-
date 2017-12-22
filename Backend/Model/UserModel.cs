@@ -15,7 +15,7 @@ namespace iClinical.Model
     public string Email { get; set; }
     public string Password { get; set; }
     public string Gender { get; set; }
-    public string Location { get; set; }
+    public string City { get; set; }
     public bool Blood { get; set; }
     public bool Cancer { get; set; }
     public bool Cardiovascular { get; set; }
@@ -44,6 +44,8 @@ namespace iClinical.Model
     public bool IsDrinker { get; set; }
     public bool HasHighBloodPressure { get; set; }
     public bool HasHighCholesterol { get; set; }
+    public string Studies { get; set; }
+
 
   }
 }

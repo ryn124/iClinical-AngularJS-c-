@@ -8,26 +8,28 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace iClinical.Controllers
 {
-    [Route ("api/user")]
+    [Route ("api/users")]
     public class UsersController : Controller
     {
+       
         private readonly iClinicalContext _context;
         public UsersController (iClinicalContext context)
         {
             _context = context;
+            
             if (_context.Users.Count () == 0)
             {
                 _context.Users.Add (new User ()
                 {
-                    Id = 1, FirstName = "Harrison", LastName = "Spain", Age = 34, Email = "harry@iclinical.com", Password = "iclinical", Gender = "Male", Location = "Los Angeles", Blood = false, Cancer = false, Cardiovascular = false, Congenital = false, Ear = false, Eye = false, Infection = false, Inflammatory = false, Injuries = false, MentalHealth = false, Metabolic = false, Musculoskeletal = false, Neurological = false, OralGastro = false, Renal = false, Reproduction = false, Respiratory = false, Skin = false, Stroke = false, Generic = false, Other = "None", IsObese = false, IsSedentary = false, HasPoorDiet = false, IsSmoker = false, IsDrinker = false, HasHighBloodPressure = false, HasHighCholesterol = false
+                    Id = 1, FirstName = "Harrison", LastName = "Spain", Age = 34, Email = "harry@iclinical.com", Password = "iclinical", Gender = "Male", City = "Los Angeles", Blood = false, Cancer = false, Cardiovascular = false, Congenital = false, Ear = false, Eye = false, Infection = false, Inflammatory = false, Injuries = false, MentalHealth = false, Metabolic = false, Musculoskeletal = false, Neurological = false, OralGastro = false, Renal = false, Reproduction = false, Respiratory = false, Skin = false, Stroke = false, Generic = false, Other = "None", IsObese = false, IsSedentary = false, HasPoorDiet = false, IsSmoker = false, IsDrinker = false, HasHighBloodPressure = false, HasHighCholesterol = false, Studies = ""
                 });
                 _context.Users.Add (new User ()
                 {
-                    Id = 2, FirstName = "Billy", LastName = "Pruden", Age = 30, Email = "bill@iclinical.com", Password = "iclinical", Gender = "Male", Location = "Texas", Blood = false, Cancer = false, Cardiovascular = false, Congenital = false, Ear = false, Eye = false, Infection = false, Inflammatory = false, Injuries = false, MentalHealth = false, Metabolic = false, Musculoskeletal = false, Neurological = false, OralGastro = false, Renal = false, Reproduction = false, Respiratory = false, Skin = false, Stroke = false, Generic = false, Other = "None", IsObese = false, IsSedentary = false, HasPoorDiet = false, IsSmoker = false, IsDrinker = false, HasHighBloodPressure = false, HasHighCholesterol = false
+                    Id = 2, FirstName = "Billy", LastName = "Pruden", Age = 30, Email = "bill@iclinical.com", Password = "iclinical", Gender = "Male", City = "Texas", Blood = false, Cancer = false, Cardiovascular = false, Congenital = false, Ear = false, Eye = false, Infection = false, Inflammatory = false, Injuries = false, MentalHealth = false, Metabolic = false, Musculoskeletal = false, Neurological = false, OralGastro = false, Renal = false, Reproduction = false, Respiratory = false, Skin = false, Stroke = false, Generic = false, Other = "None", IsObese = false, IsSedentary = false, HasPoorDiet = false, IsSmoker = false, IsDrinker = false, HasHighBloodPressure = false, HasHighCholesterol = false, Studies = ""
                 });
                 _context.Users.Add (new User ()
                 {
-                    Id = 3, FirstName = "Taylor", LastName = "Thomas", Age = 28, Email = "taytay@iclinical.com", Password = "iclinical", Gender = "Male", Location = "New York", Blood = false, Cancer = false, Cardiovascular = false, Congenital = false, Ear = false, Eye = false, Infection = false, Inflammatory = false, Injuries = false, MentalHealth = false, Metabolic = false, Musculoskeletal = false, Neurological = false, OralGastro = false, Renal = false, Reproduction = false, Respiratory = false, Skin = false, Stroke = false, Generic = false, Other = "None", IsObese = false, IsSedentary = false, HasPoorDiet = false, IsSmoker = false, IsDrinker = false, HasHighBloodPressure = false, HasHighCholesterol = false
+                    Id = 3, FirstName = "Taylor", LastName = "Thomas", Age = 28, Email = "taytay@iclinical.com", Password = "iclinical", Gender = "Male", City = "New York", Blood = false, Cancer = false, Cardiovascular = false, Congenital = false, Ear = false, Eye = false, Infection = false, Inflammatory = false, Injuries = false, MentalHealth = false, Metabolic = false, Musculoskeletal = false, Neurological = false, OralGastro = false, Renal = false, Reproduction = false, Respiratory = false, Skin = false, Stroke = false, Generic = false, Other = "None", IsObese = false, IsSedentary = false, HasPoorDiet = false, IsSmoker = false, IsDrinker = false, HasHighBloodPressure = false, HasHighCholesterol = false, Studies = ""
                 });
                 _context.SaveChanges ();
             }
@@ -57,7 +59,8 @@ namespace iClinical.Controllers
         // POST api/values
         [HttpPost]
         public User Post ([FromBody] User s)
-        {
+        {   
+            s.Id = _context.Users.Count()+1;
             _context.Users.Add (s);
             _context.SaveChanges ();
             return s;
