@@ -18,11 +18,11 @@ app.controller("companyController", function ($scope, $state, $stateParams, comp
                   study.studyTitle = arr[i].public_title;
                   study.briefSummary = arr[i].brief_summary;
                   study.gender = arr[i].gender;
-                  study.status = arr[i].status; 
-                  study.sampleSize = arr[i].target_sample_size;
+                //   study.status = arr[i].status; 
+                  study.sampleSize = parseInt(arr[i].target_sample_size);
                   newArr.push(study);
               }
-              var company = ({"Id": 1, "CompanyName": "sgfdsgfdAlternative Studes INC", "CompanyUserName": "ALTMEDINC", "CompanyPassword": "iclinical", "Phone" : "7145555555", "Description": "We are Alternative Studies INC. We collectivley research hundreds on new studies daily. Thank you for your intrest in our Company.", "Email": "ALTMEDINC@iclinical.com", "City": "Santa Ana"})
+              var company = ({"Id": 1, "CompanyName": "sgfdsgfdAlternative Studes INC", "CompanyUserName": "ALTMEDINC", "CompanyPassword": "iclinical", "Phone" : "7145555555", "Description": "We are Alternative Studies INC. We collectivley research hundreds on new studies daily. Thank you for your intrest in our Company.", "Email": "ALTMEDINC@iclinical.com", "City": "Santa Ana", "studies": newArr})
                 console.log(company)
               companyService.setupCompanies(1, company)
               })
