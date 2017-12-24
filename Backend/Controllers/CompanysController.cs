@@ -58,7 +58,7 @@ public Company Get (int id)
 [HttpPost]
 public Company Post ([FromBody] Company s)
 {
-    s.Id = _context.Studies.Count()+1;
+    s.Id = _context.Companies.Count()+1;
     _context.Companies.Add (s);
     _context.SaveChanges ();
     return s;

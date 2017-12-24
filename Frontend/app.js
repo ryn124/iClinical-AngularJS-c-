@@ -28,5 +28,10 @@ app.config(function ($stateProvider, $urlRouterProvider) {
       templateUrl: "./views/matches.html",
       controller: "matchController"
     })
+    .state("companyDashboard", {
+      url: "/companydashboard/:id",
+      templateUrl: "./views/companyDashBoard.html",
+      controller: "companyController"
+    })
 
 })

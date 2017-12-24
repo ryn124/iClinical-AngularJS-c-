@@ -57,7 +57,7 @@ over-ride "Weak" message, show font in dark grey
 }
 
 body {
-	background: url('/css/clinicaltrial.png') no-repeat center center fixed;
+	background: url('/css/clinicaltrial.jpg') no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -132,4 +132,8 @@ form[role=login]>div {
 	background-color: white;
 	width: 80%;
 	padding: 5%;
+}
+
+.companySignup{
+	color: black !important;
 }
