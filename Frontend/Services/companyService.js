@@ -1,18 +1,7 @@
 app.service("companyService", function ($http) {
 
-  // // gets data from study api for dummy data
-  // this.getStudies = function(){
-  //   return $http.get("https://api.opentrials.net/v1/search?q=a&page=1&per_page=100");
-  // }
-
-  // // }
-  // // populates studies to dummy companies id:1,2,3
-  // this.setupCompanies = function(id, data){
-  //   return $http.put("http://localhost:5000/api/companies/" + id, data)
-  // }
 
   //POSTS NEW COMPANY
-   // posts a user
    this.newCompanyForm = function (x) {
     return $http.post("http://localhost:5000/api/companies", x)
   }
@@ -51,9 +40,20 @@ app.service("companyService", function ($http) {
   this.currentCompanyReturn = function(){
     return _currentCompanyId;
   }
+  // gets company by id
   this.getCurrentCompanyInfo = function(){
     console.log(_currentCompanyId)
-    return $http.get("http://localhost:5000/api/Companies/" + _currentCompanyId)
+    return $http.get("http://localhost:5000/api/companies/" + _currentCompanyId);
+  }
+
+  //holds currentuserName for company profle creation
+  var userName = null;
+  this.holdUsername = function(name){
+    userName = name; 
+  }
+  //returns user name; 
+  this.returnUsername = function(){
+    return userName; 
   }
 
 })

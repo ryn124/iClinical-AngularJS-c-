@@ -30,7 +30,12 @@ app.config(function ($stateProvider, $urlRouterProvider) {
     })
     .state("companyDashboard", {
       url: "/companydashboard/:id",
-      templateUrl: "./views/companyDashBoard.html",
+      templateUrl: "./views/companyDashboard.html",
+      controller: "companyController"
+    })
+    .state("successPage", {
+      url: "/successpage",
+      templateUrl: "./views/successPage.html",
       controller: "companyController"
     })
 

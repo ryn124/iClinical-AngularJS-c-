@@ -68,15 +68,11 @@ app.controller("userController", function ($scope, $state, $stateParams, userSer
       if ($scope.user.city == "") {
         $scope.locationRequired = false;
       }
-
     }
     //if everything is filled out in signup form this funciton is run and inputs passed in 
     else {
         console.log($scope.user)
-        userService.newUserForm($scope.user)
-      //   // $state.go('app.userCard', {id: userService.getNewId()})
-    
+        userService.newUserForm($scope.user);
     }
   }
-
 })

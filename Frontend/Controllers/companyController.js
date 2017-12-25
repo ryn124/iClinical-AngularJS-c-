@@ -101,20 +101,34 @@ app.controller("companyController", function ($scope, $state, $stateParams, comp
     }
     //if everything is filled out in signup form this function is run and inputs passed in 
     else {
-      console.log($scope.company)
-      companyService.newCompanyForm($scope.company)
-      companyService.getAllCompanies()
-        .then(function (response) {
-          for (var i = 0; i < response.data.length; i++) {
-            if (response.data[i].companyUserName == $scope.company.companyUserName) {
-              companyService.setCurrentCompany(response.data[i].id)
-            }
-          }
-          console.log(companyService.currentCompanyReturn())
-        })
+      companyService.newCompanyForm($scope.company);
+      companyService.holdUsername($scope.company.companyUserName);
+      $state.go("successPage");
     }
   }
 
-  // $state.go('companyDashboard', {id: companyService.currentCompanyReturn()})
+  //success page redirect page load via id number to dashboard
+  $scope.redirect = function(){
+    companyService.getAllCompanies().then(function(response){
+    for (var i = 0; i < response.data.length; i++){
+      if(response.data[i].companyUserName == companyService.returnUsername()){
+        companyService.setCurrentCompany(response.data[i].id);
+        
+        $state.go("companyDashboard");
+        //ADD NG-HIDE AND UNHIDE COMPANY DASHBOARD ON NAVBAR HERE!!
+      }
+    }
+   })
+  }
+  
+  //loads company dashboard 
+$scope.loadCompanyDash = function(){
+companyService.getCurrentCompanyInfo().then(function(response){
+$scope.currentCompany = response.data
+})
+}
 
+ $scope.loadCompanyDash();
+
+ 
 })
