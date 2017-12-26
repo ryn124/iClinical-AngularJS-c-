@@ -15,14 +15,15 @@ app.controller("companyController", function ($scope, $state, $stateParams, comp
               for (var i = 0; i < arr.length; i++){
                   var study = {};
                   study.id = arr[i].id;
-                  study.studyTitle = arr[i].public_title;
-                  study.briefSummary = arr[i].brief_summary;
-                  study.gender = arr[i].gender;
-                  study.status = arr[i].status; 
-                  study.sampleSize = arr[i].target_sample_size;
+                //   study.studyTitle = arr[i].public_title;
+                //   study.briefSummary = arr[i].brief_summary;
+                //   study.gender = arr[i].gender;
+                //   study.status = arr[i].status; 
+                //   study.sampleSize = arr[i].target_sample_size;
                   newArr.push(study);
               }
-              var company = ({"Id": 1, "CompanyName": "sgfdsgfdAlternative Studes INC", "CompanyUserName": "ALTMEDINC", "CompanyPassword": "iclinical", "Phone" : "7145555555", "Description": "We are Alternative Studies INC. We collectivley research hundreds on new studies daily. Thank you for your intrest in our Company.", "Email": "ALTMEDINC@iclinical.com", "City": "Santa Ana"})
+              console.log(newArr);
+              var company = ({"Id": 1, "CompanyName": "sgfdsgfdAlternative Studes INC", "CompanyUserName": "ALTMEDINC", "CompanyPassword": "iclinical", "Phone" : "7145555555", "Description": "We are Alternative Studies INC. We collectivley research hundreds on new studies daily. Thank you for your intrest in our Company.", "Studies": newArr, "Email": "ALTMEDINC@iclinical.com", "City": "Santa Ana"})
                 console.log(company)
               companyService.setupCompanies(1, company)
               })
