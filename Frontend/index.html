@@ -42,12 +42,13 @@
               <img class="logo" alt="Brand" src="">
             </a>
           </div>
-          <div class="collapse navbar-collapse"  >
-            <ul class="nav navbar-nav navbar-right">
+          <div ng-controller="navBarController" class="collapse navbar-collapse"  >
+            <ul class="nav navbar-nav navbar-right nav-items">
               <li><a ui-sref="home">Home</a></li>
               <li><a ui-sref="members">Dashboard</a></li>
               <li><a ui-sref="companyDashbaord">Company Dashboard</a></li>
               <li><a ui-sref="#">Matched</a></li>
+              <li><a ng-click="logout()">Logout</a></li>
             </ul> 
           </div>
         </div>
@@ -69,6 +70,7 @@
     <script type="text/javascript" src="./Controllers/loginController.js"></script>
     <script type="text/javascript" src="./Controllers/matchController.js"></script>
     <script type="text/javascript" src="./Controllers/dashboardController.js"></script>
+    <script type="text/javascript" src="./Controllers/navBarController.js"></script>
 
   </div>
 </body>

@@ -1,4 +1,8 @@
-app.controller("matchController", function ($scope, $state, $stateParams, matchService) {
+app.controller("matchController", function ($scope, $state, $stateParams, matchService, userService) {
+  // checks if user is logged on
+  if (userService.currentUserReturn() == 0){
+    $state.go("home");
+  }
   // this searches the open trial api by conditions passed in
   $scope.clinicalSearch = function(condition) {
     console.log(condition);
