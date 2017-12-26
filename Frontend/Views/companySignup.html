@@ -2,70 +2,53 @@
   <h1 class="signUpHeader">Company Sign Up</h1>
   <div class="container formContainer">
     <div class="col-md-6">
-      <label>Company Name</label>
+      <label>NAME</label>
       <input type="text" class="form-control" ng-model="company.companyName">
-      <p class="userFormRequired" ng-hide="firstNameRequired">Required!</p>
+      <p class="userFormRequired" ng-hide="companyName">Required!</p>
     </div>
 
     <div class="col-md-6">
-      <label>Company UserName</label>
+      <label>USER NAME</label>
       <input type="text" class="form-control" ng-model="company.companyUserName">
-      <p class="userFormRequired" ng-hide="lastNameRequired">Required!</p>
+      <p class="userFormRequired" ng-hide="companyUsername">Required!</p>
     </div>
-  </div>
 
-  <div class="container formContainer">
     <div class="col-md-3">
-      <label>Password</label>
-      <input type="text" class="form-control" ng-model="company.companyPassword">
-      <p class="userFormRequired" ng-hide="DOBRequired">Required!</p>
+      <label>PHONE NUMBER</label>
+      <input type="text" class="form-control" ng-model="company.phone">
+      <p class="userFormRequired" ng-hide="companyPhone">Required!</p>
     </div>
+
+    <div class="col-md-3">
+      <label>EMAIL</label>
+      <input type="text" class="form-control" ng-model="company.email">
+      <p class="userFormRequired" ng-hide="companyEmail">Required!</p>
+    </div>
+
+    <div class="col-md-3">
+      <label>PASSWORD</label>
+      <input type="text" class="form-control" ng-model="company.companyPassword">
+      <p class="userFormRequired" ng-hide="companyPass">Required!</p>
+    </div>
+
 
     <div class="container formContainer">
       <div class="col-md-3">
-        <label>Phone Number</label>
-        <input type="text" class="form-control" ng-model="company.phoneNumber">
-        <p class="userFormRequired" ng-hide="genderRequired">Required!</p>
+        <label>CITY</label>
+        <input type="text" class="form-control" ng-model="company.city">
+        <p class="userFormRequired" ng-hide="companyCity">Required!</p>
       </div>
     </div>
 
-    <div class="col-md-2">
-      <label>Email</label>
-      <input type="text" class="form-control" ng-model="company.email">
-    <div class="col-md-3">
-      <label>email address</label>
-      <input type="text" class="form-control" ng-model="user.email">
-      <p class="userFormRequired" ng-hide="emailRequired">Required!</p>
-    </div>
-
-    <div class="col-md-3">
-      <label>Create a Password</label>
-      <input type="text" class="form-control" ng-model="user.password">
-      <p class="userFormRequired" ng-hide="passwordRequired">Required!</p>
-    </div>
-  </div>
-
-  <div class="container formContainer">
-    <div class="col-md-6">
-      <label>City</label>
-      <input type="text" class="form-control" ng-model="company.city">
-      <p class="userFormRequired" ng-hide="locationRequired">Required!</p>
-    </div>
-  </div>
-
-  <div class="container formContainer">
-    <div class="col-md-6">
-      <label>Description of your company</label>
+    <div class="col-md-12">
+      <label>DESCRIPTION</label>
       <input type="text" class="form-control" ng-model="company.description">
-      <p class="userFormRequired" ng-hide="emailRequired">Required!</p>
+      <p class="userFormRequired" ng-hide="companyDescription">Required!</p>
     </div>
-  </div>
-  <div class="container formContainer">
-  <div class="col-md-2">
-    <label>Studies</label>
-    <input type="text" class="form-control" ng-model="company.studies">
-    <p class="userFormRequired" ng-hide="passwordRequired">Required!</p>
-  </div>
-</div>
 
-</div>
+
+    <div class="container">
+      <button class="btn btn-primary" ng-click="newCompanySubmit()">SUBMIT</button>
+    </div>
+
+  </div>

@@ -1,0 +1,23 @@
+<h1>Copmany dashboard view</h1>
+<div class="container">
+
+  <div class="container dashboard-container">
+    <div class="dashboard-name">
+      <h3 class="text-center">
+        <strong>{{currentCompany.companyName}}</strong>
+      </h3>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <h4 class="text-center"><strong>Company User Name: </strong>{{currentCompany.companyUserName}}</h4>
+      </div>
+
+      <div class="col-md-4">
+        <h4 class="text-center"><strong>City: </strong>{{currentCompany.city}}</h4>
+      </div>
+     
+    </div>
+    <button class="dashboard-button center-block btn btn-lg btn-info" ng-click="addStudies()">Add Studies</button>
+  </div>
+  
+</div>

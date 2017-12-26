@@ -14,7 +14,6 @@ namespace iClinical.Model
     public string CompanyPassword { get; set; }
     public string Phone { get; set; }
     public string Description { get; set; }
-    public List<string> Studies = new List<string>();
     public string Email { get; set; }
     public string City { get; set; }
   }
