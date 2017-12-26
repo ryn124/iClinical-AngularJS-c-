@@ -7,6 +7,15 @@ app.service("userService", function ($http) {
   this.getUsers = function () {
     return $http.get("http://localhost:5000/api/users")
   }
+  //redirect user to success page, holds user email to set currentuserID for success page.
+  var userEmail = null;
+  this.userEmail = function(name){
+    userEmail = name;
+  }
+  //returns userEmail
+  this.returnEmail = function(){
+    return userEmail;
+  }
   // current user logged in, 0 means no one is logged on
   var _currentUserId = 0;
   this.setCurrentUser = function (id){

@@ -17,5 +17,10 @@ app.service("matchService", function ($http) {
     return $http.get("https://api.opentrials.net/v1/search?q="+ condition + "%20age%2025&page=3&per_page=100");
   }
 
+
+  //Company searches trial by Name and returns results
+  this.getTrialsByName = function(name){
+    
+  }
 })
   

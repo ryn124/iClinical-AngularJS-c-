@@ -1,35 +1,6 @@
-app.controller("companyController", function ($scope, $state, $stateParams, companyService) {
+app.controller("companyController", function ($scope, $state, $stateParams, companyService, matchService) {
 
-  //populates studies to dummy companies id:1,2,3
-  // $scope.addStudy = function () {
-  //     companyService.getStudies()
-  //         .then(function (response) {
-  //             var arr = response.data.items;
-  //             for (var i = arr.length-1; i >= 0; i--) {
-  //                 if (arr[i].id.charAt(0) != "a") {
-  //                     response.data.items.splice(i, 1);
-  //                 }
-  //             }
-  //             var newArr = []
-  //             //extracts prop
-  //           for (var i = 0; i < arr.length; i++){
-  //               var study = {};
-  //               study.id = arr[i].id;
-  //             //   study.studyTitle = arr[i].public_title;
-  //             //   study.briefSummary = arr[i].brief_summary;
-  //             //   study.gender = arr[i].gender;
-  //             //   study.status = arr[i].status; 
-  //             //   study.sampleSize = arr[i].target_sample_size.toString();
-  //               newArr.push(study);
-  //           }
-  //           var company = ({"Id": 1, "CompanyName": "Alternative Studes INC", "CompanyUserName": "ALTMEDINC", "CompanyPassword": "iclinical", "Phone" : "7145555555", "Description": "We are Alternative Studies INC. We collectivley research hundreds on new studies daily. Thank you for your intrest in our Company.", "Email": "ALTMEDINC@iclinical.com", "City": "Mexico City", "studies": newArr})
-  //             console.log(company)
-  //           companyService.setupCompanies(1, company)
-  //           })
-  //         }
-
-  // $scope.addStudy();
-
+//hides form verification upon initial page load
   $scope.companyName = true;
   $scope.companyUsername = true;
   $scope.companyPhone = true;
@@ -108,12 +79,11 @@ app.controller("companyController", function ($scope, $state, $stateParams, comp
   }
 
   //success page redirect page load via id number to dashboard
-  $scope.redirect = function(){
+  $scope.companyRedirect = function(){
     companyService.getAllCompanies().then(function(response){
     for (var i = 0; i < response.data.length; i++){
       if(response.data[i].companyUserName == companyService.returnUsername()){
         companyService.setCurrentCompany(response.data[i].id);
-        
         $state.go("companyDashboard");
         //ADD NG-HIDE AND UNHIDE COMPANY DASHBOARD ON NAVBAR HERE!!
       }
@@ -129,6 +99,21 @@ $scope.currentCompany = response.data
 }
 
  $scope.loadCompanyDash();
+
+ //searches trials and populates dashboard with search results
+$scope.searchStudies = function(trialName){
+  matchService.getApi(trialName).then(function(response){
+    $scope.searchedTrials = response.data.items;
+  })
+}
+
+// adds selected trial to company dashboard. Makes new instance of study in backend with company id in it
+// $scope.addStudy = function(trial){
+//   var searched = (trail.id, trial.public_title, trail.brief_summary, trial.gender, trail.status )
+  
+// }
+
+
 
  
 })
