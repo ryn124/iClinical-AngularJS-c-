@@ -1,7 +1,7 @@
-<h1>Copmany dashboard view</h1>
-<div class="container">
+<h1>Company dashboard view</h1>
+<div class="container companyContainerView">
 
-  <div class="container dashboard-container">
+  <div class="companyDashboard">
     <div class="dashboard-name">
       <h3 class="text-center">
         <strong>{{currentCompany.companyName}}</strong>
@@ -9,15 +9,35 @@
     </div>
     <div class="row">
       <div class="col-md-4">
-        <h4 class="text-center"><strong>Company User Name: </strong>{{currentCompany.companyUserName}}</h4>
+        <h4 class="text-center">
+          <strong>Company User Name: </strong>{{currentCompany.companyUserName}}</h4>
       </div>
 
       <div class="col-md-4">
-        <h4 class="text-center"><strong>City: </strong>{{currentCompany.city}}</h4>
+        <h4 class="text-center">
+          <strong>City: </strong>{{currentCompany.city}}</h4>
       </div>
-     
+        <div>
+          <p>Please search study your company is running by name: </p>
+        <input type="text" ng-model="studyName">
+        <button class="dashboard-button center-block btn btn-lg btn-info" ng-click="searchStudies(studyName)">Search Studies</button>
+        </div>
     </div>
-    <button class="dashboard-button center-block btn btn-lg btn-info" ng-click="addStudies()">Add Studies</button>
   </div>
-  
+
+  <div class="container companyStudySidebar">
+    <h3>Studies</h3>
+    <!-- <div class="container" ng-repeat="">
+      <h5>{{}}</h5>
+      <button class="btn">Delete</button> -->
+    </div>
+  </div>
+
+</div>
+
+<div class="container">
+  <div class="container searchedStudyContainer" ng-repeat="trial in searchedTrials">
+    <h4>Title: {{trial.public_title}}</h4>
+    <button class="btn btn-primary" ng-click="addStudy(trial)">Add Study</button>
+  </div>
 </div>

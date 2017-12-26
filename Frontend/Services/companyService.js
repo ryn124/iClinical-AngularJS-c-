@@ -1,6 +1,5 @@
 app.service("companyService", function ($http) {
 
-
   //POSTS NEW COMPANY
    this.newCompanyForm = function (x) {
     return $http.post("http://localhost:5000/api/companies", x)
@@ -26,7 +25,7 @@ app.service("companyService", function ($http) {
     }
   }
 
-  //gets all companies
+  //GETS ALL COMPANIES
   this.getAllCompanies = function(){
     return $http.get("http://localhost:5000/api/companies")
   }
@@ -46,12 +45,12 @@ app.service("companyService", function ($http) {
     return $http.get("http://localhost:5000/api/companies/" + _currentCompanyId);
   }
 
-  //holds currentuserName for company profle creation
+  //holds current company userName for company profle creation
   var userName = null;
   this.holdUsername = function(name){
     userName = name; 
   }
-  //returns user name; 
+  //returns company user name; 
   this.returnUsername = function(){
     return userName; 
   }

@@ -135,5 +135,35 @@ form[role=login]>div {
 }
 
 .companySignup{
-	color: black !important;
+	color:rgb(75, 75, 75) !important;
 }
+.companyContainerView{
+width: 90%;
+}
+
+.companyStudySidebar{
+	margin-left: 10px; 
+	border-radius: 10px;
+	border: 1px solid rgb(109, 109, 109);
+	background-color: white;
+	width: 39%; 
+	float: right; 
+}
+.companyDashboard{
+	float: left; 
+	padding: 35px; 
+	margin: 0;
+	border-radius: 10px;
+	border: 1px solid rgb(109, 109, 109);
+	background-color: white;
+	width: 55%;
+}
+
+.searchedStudyContainer{
+	margin-top: 20px; 
+	border-radius: 10px;
+	border: 1px solid rgb(109, 109, 109);
+	background-color: white;
+	padding-bottom: 10px; 
+}
+

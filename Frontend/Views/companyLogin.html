@@ -1,0 +1,23 @@
+<div class="container">
+  
+    <div class="row" id="pwd-container">
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+        <section class="login-form">
+          <form method="post" role="login">
+            <img src="./css/ICLINICALTransparent.png" class="img-responsive" alt="" />
+            <p>Company Sign In</p>
+            <input type="email" placeholder="Email" required ng-model="company.email" class="form-control input-lg" value="joestudent@gmail.com"
+            />
+            <input type="password" class="form-control input-lg" ng-model="company.password" id="password" placeholder="Password" required="" />
+            <div class="pwstrength_viewport_progress"></div>
+            <p ng-hide="companyWrong">Your email and/or password does not match.</p>
+            <button type="submit" class="btn btn-lg btn-primary btn-block" ng-click="companyLogin(company)">Sign in</button>
+           
+          </form>
+          
+        </section>
+      </div>
+      <div class="col-md-4"></div>
+    </div>
+  </div>

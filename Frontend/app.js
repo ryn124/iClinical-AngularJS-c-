@@ -29,7 +29,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
       controller: "matchController"
     })
     .state("companyDashboard", {
-      url: "/companydashboard/:id",
+      url: "/companydashboard",
       templateUrl: "./views/companyDashboard.html",
       controller: "companyController"
     })
@@ -37,6 +37,16 @@ app.config(function ($stateProvider, $urlRouterProvider) {
       url: "/successpage",
       templateUrl: "./views/successPage.html",
       controller: "companyController"
+    })
+    .state("userSuccessPage", {
+      url: "/usersuccesspage",
+      templateUrl: "./views/userSuccessPage.html",
+      controller: "userController"
+    })
+    .state("companyLogin", {
+      url: "/companylogin",
+      templateUrl: "./views/companyLogin.html",
+      controller: "loginController"
     })
 
 })

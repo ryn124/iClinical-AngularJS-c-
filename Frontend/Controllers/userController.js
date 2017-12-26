@@ -73,6 +73,21 @@ app.controller("userController", function ($scope, $state, $stateParams, userSer
     else {
         console.log($scope.user)
         userService.newUserForm($scope.user);
+        // holds userEmail in service for search in successpage
+        userService.userEmail($scope.user.email);
+        $state.go("userSuccessPage");
     }
+  }
+  
+  //loads new user to dashboardview, sets new userID for currentUserID
+  $scope.redirect = function(){
+    userService.getUsers().then(function(response){
+      for(var i = 0; i < response.data.length; i++){
+        if(response.data[i].email == userService.returnEmail()){
+          userService.setCurrentUser(response.data[i].id);
+        }
+      }
+      $state.go("dashboard");
+    })
   }
 })

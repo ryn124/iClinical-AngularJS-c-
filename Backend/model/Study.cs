@@ -17,5 +17,6 @@ namespace iClinical.Model
     public string Status { get; set; }
     public int SampleSize { get; set; }
     public int CompanyId {get; set;}
+    public int UserId {get; set;}
   }
 }
