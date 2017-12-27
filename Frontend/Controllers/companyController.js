@@ -1,7 +1,7 @@
 app.controller("companyController", function ($scope, $state, $stateParams, companyService, matchService, userService) {
-  if (companyService.currentCompanyReturn() == 0 && userService.currentUserReturn() == 0){
+  if (companyService.currentCompanyReturn() == 0 && userService.currentUserReturn() == 0) {
     $state.go("dashboard");
-  } else if(company.currentCompanyReturn() == 0){
+  } else if (companyService.currentCompanyReturn() == 0) {
     $state.go("home");
   }
 
@@ -96,37 +96,45 @@ app.controller("companyController", function ($scope, $state, $stateParams, comp
   }
 
   //loads company dashboard 
-$scope.loadCompanyDash = function(){
-companyService.getCurrentCompanyInfo().then(function(response){
-$scope.currentCompany = response.data
-})
-}
+  $scope.loadCompanyDash = function () {
+    companyService.getCurrentCompanyInfo().then(function (response) {
+      $scope.currentCompany = response.data
+    })
+  }
 
- $scope.loadCompanyDash();
+  $scope.loadCompanyDash();
 
- //searches trials and populates dashboard with search results
-$scope.searchStudies = function(trialName){
-  matchService.getApi(trialName).then(function(response){
-    $scope.searchedTrials = response.data.items;
-  })
-}
+  //searches trials and populates dashboard with search results
+  $scope.searchStudies = function (trialName) {
+    matchService.getApi(trialName).then(function (response) {
+      $scope.searchedTrials = response.data.items;
+    })
+  }
 
-// adds selected searched item to backend. Makes new instance of study in backend with company id in it
-$scope.addStudy = function(trial){
-  var searched = ({studyId: trial.id, studyTitle: trial.public_title, briefSummary: trial.brief_summary, gender: trial.gender, status: trial.status, sampleSize: trial.target_sample_size,  companyId: companyService.currentCompanyReturn()});
-  companyService.postStudyCompany(searched);
-  companyService.getAllStudies().then(function(response){
-    $scope.companyStudies = [];
-    for(var i = 0; i < response.data.length; i++){
-      if(companyService.currentCompanyReturn() == response.data[i].companyId){
-        $scope.companyStudies.push(response.data[i]);
+  // adds selected searched item to backend. Makes new instance of study in backend with company id in it
+  $scope.addStudy = function (trial) {
+    var searched = ({
+      studyId: trial.id,
+      studyTitle: trial.public_title,
+      briefSummary: trial.brief_summary,
+      gender: trial.gender,
+      status: trial.status,
+      sampleSize: trial.target_sample_size,
+      companyId: companyService.currentCompanyReturn()
+    });
+    companyService.postStudyCompany(searched);
+    companyService.getAllStudies().then(function (response) {
+      $scope.companyStudies = [];
+      for (var i = 0; i < response.data.length; i++) {
+        if (companyService.currentCompanyReturn() == response.data[i].companyId) {
+          $scope.companyStudies.push(response.data[i]);
+        }
       }
-    }
-  })
-}
+    })
+  }
 
-//compnay deletes studies from backend
-$scope.deleteStudy = function(study){
-  companyService.deleteStudy(study.id)
-}
+  //compnay deletes studies from backend
+  $scope.deleteStudy = function (study) {
+    companyService.deleteStudy(study.id)
+  }
 })
