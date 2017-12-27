@@ -192,10 +192,18 @@ label {
 	margin-top: 10px
 }
 
+<<<<<<< HEAD
 .companyStudies{
 	margin-top: 70px;
 	border-radius: 10px;
 	border: 1px solid rgb(109, 109, 109);
 	background-color: white;
 	width: 70%;
+=======
+.logo {
+	width: 160px;
+	height: 145px;
+	margin-top: -60px;
+	margin-bottom: -112px;
+>>>>>>> 9f6a9c633fa230169525faa58b0b1bd3388c8a3d
 }
