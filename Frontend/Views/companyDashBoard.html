@@ -1,11 +1,14 @@
 <h1>Company dashboard view</h1>
 <div class="container companyContainerView ">
+
   <div class="companyDashboard col-md-12">
+
     <div class="dashboard-name">
       <h1 class="text-center">
         <strong>{{currentCompany.companyName}}</strong>
       </h1>
     </div>
+
     <div class="row">
       <div class="col-md-6">
         <h4 class="text-center">
@@ -25,15 +28,18 @@
       <button class="btn" ng-click="editCompany()">Edit Profile</button>
     </div>
 
-  </div>
-  <div class="container companyStudies col-md-12">
-    <h3>Current Studies Added:</h3>
-    <div ng-repeat="study in companyStudies">
-      <h3>{{study.studyTitle}}</h3>
-      <h5>{{study.briefSummary}}</h5>
-      <button class="btn btn-danger" ng-click="deleteStudy(study)">Delete</button>
+    <div class="container companyStudies col-md-12">
+      <h3 class="text-center">Current Studies Added:</h3>
+      <div ng-repeat="study in companyStudies">
+        <h3> <strong>{{study.studyTitle}}</strong></h3>
+        <h5>{{study.briefSummary}}</h5>
+        <button class="btn btn-danger" ng-click="deleteStudy(study)">Delete</button>
+      </div>
     </div>
+
+
   </div>
+
 </div>
 
 
