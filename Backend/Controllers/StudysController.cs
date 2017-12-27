@@ -86,11 +86,11 @@ namespace iClinical.Controllers
 
         // DELETE api/values/5
         [HttpDelete ("{id}")]
-        public string Delete (string id)
+        public string Delete (int id)
         {
             foreach (Study s in _context.Studies)
             {
-                if (s.StudyId == id)
+                if (s.Id == id)
                 {
                     _context.Studies.Remove (s);
                     _context.SaveChanges ();

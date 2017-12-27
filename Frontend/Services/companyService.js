@@ -67,7 +67,7 @@ app.service("companyService", function ($http) {
 
   //compnay deletes study from backend
   this.deleteStudy = function(id){
-    return $http.delete("http://localhost:5000/api/studies", id)
+    return $http.delete("http://localhost:5000/api/studies/" + id)
   }
 })
   
