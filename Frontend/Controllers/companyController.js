@@ -1,4 +1,9 @@
-app.controller("companyController", function ($scope, $state, $stateParams, companyService, matchService) {
+app.controller("companyController", function ($scope, $state, $stateParams, companyService, matchService, userService) {
+  if (companyService.currentCompanyReturn() == 0 && userService.currentUserReturn() == 0){
+    $state.go("dashboard");
+  } else if(company.currentCompanyReturn() == 0){
+    $state.go("home");
+  }
 
   //hides form verification upon initial page load
   $scope.companyName = true;
