@@ -19,15 +19,15 @@ namespace iClinical.Controllers
             {
                 _context.Studies.Add (new Study ()
                 {
-                    Id = "1", StudyTitle = "Lung Cancer Research Decisions", BriefSummary = "A study for Lung Cancer Patients that need to make the decision of treatment and research.", Gender = "Both", SampleSize = 15, CompanyId = 2
+                    Id = 1, StudyId = "1", StudyTitle = "Lung Cancer Research Decisions", BriefSummary = "A study for Lung Cancer Patients that need to make the decision of treatment and research.", Gender = "Both", SampleSize = 15, CompanyId = 2
                       });
                 _context.Studies.Add (new Study ()
                 {
-                    Id = "2", StudyTitle = "Osteoperosis in Women under 23", BriefSummary = "A bone study that recruits young women for a possible cure of Osteoperosis at a young age", Gender = "Female", SampleSize = 100, CompanyId = 1
+                    Id = 2, StudyId = "2", StudyTitle = "Osteoperosis in Women under 23", BriefSummary = "A bone study that recruits young women for a possible cure of Osteoperosis at a young age", Gender = "Female", SampleSize = 100, CompanyId = 1
                      });
                 _context.Studies.Add (new Study ()
                 {
-                    Id = "3", StudyTitle = "Testicular Cancer in Men with Animal Besties", BriefSummary = "A study that contiunes research in older men that have testicular cancer and beleive the cure can be an animal companion.", Gender = "Male", SampleSize = 200, CompanyId = 3
+                    Id = 3, StudyId = "3", StudyTitle = "Testicular Cancer in Men with Animal Besties", BriefSummary = "A study that contiunes research in older men that have testicular cancer and beleive the cure can be an animal companion.", Gender = "Male", SampleSize = 200, CompanyId = 3
                     });
                 _context.SaveChanges ();
             }
@@ -45,7 +45,7 @@ namespace iClinical.Controllers
         {
             foreach (Study s in _context.Studies)
             {
-                if (s.Id == id)
+                if (s.StudyId == id)
                 {
                     return s;
                 }
@@ -58,6 +58,7 @@ namespace iClinical.Controllers
         [HttpPost]
         public Study Post ([FromBody] Study s)
         {
+            s.Id =  _context.Studies.Count()+1;
             _context.Studies.Add (s);
             _context.SaveChanges ();
             return s;
@@ -70,7 +71,7 @@ namespace iClinical.Controllers
 
             foreach (Study s in _context.Studies)
             {
-                if (s.Id == id)
+                if (s.StudyId == id)
                 {
                     _context.Studies.Remove (s);
                     _context.SaveChanges ();
@@ -89,7 +90,7 @@ namespace iClinical.Controllers
         {
             foreach (Study s in _context.Studies)
             {
-                if (s.Id == id)
+                if (s.StudyId == id)
                 {
                     _context.Studies.Remove (s);
                     _context.SaveChanges ();

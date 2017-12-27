@@ -112,12 +112,27 @@ $scope.searchStudies = function(trialName){
   })
 }
 
-// adds selected trial to company dashboard. Makes new instance of study in backend with company id in it
-// $scope.addStudy = function(trial){
-//   var searched = (trail.id, trial.public_title, trail.brief_summary, trial.gender, trail.status )
-  
-// }
+// adds selected searched item to backend. Makes new instance of study in backend with company id in it
+$scope.addStudy = function(trial){
+  var searched = ({studyId: trial.id, studyTitle: trial.public_title, briefSummary: trial.brief_summary, gender: trial.gender, status: trial.status, sampleSize: trial.target_sample_size,  companyId: companyService.currentCompanyReturn()});
+  companyService.postStudyCompany(searched);
+  $state.go("companyStudies");
+}
 
+//populates company study in company studies view. 
+$scope.showStudies = function(){
+  companyService.getAllStudies().then(function(response){
+    var arr = [];
+    for(var i = 0; i < response.data.length; i++){
+      if(companyService.currentCompanyReturn == response.data[i].companyId){
+        arr.push(response.data[i].studyTitle);
+      }
+    }
+    console.log(companyService.currentCompanyReturn);
+  })
+}
+
+$scope.showStudies(); 
 
 
  

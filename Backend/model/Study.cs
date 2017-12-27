@@ -10,7 +10,8 @@ namespace iClinical.Model
   public class Study
   {
     [Key]
-    public string Id { get; set; }
+    public int Id { get; set; }
+    public string StudyId { get; set; }
     public string StudyTitle { get; set; }
     public string BriefSummary { get; set; }
     public string  Gender{ get; set; }
