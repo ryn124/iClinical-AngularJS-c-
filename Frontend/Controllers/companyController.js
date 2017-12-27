@@ -113,17 +113,25 @@ app.controller("companyController", function ($scope, $state, $stateParams, comp
 
   // adds selected searched item to backend. Makes new instance of study in backend with company id in it
   $scope.addStudy = function (trial) {
-    var searched = ({
-      studyId: trial.id,
-      studyTitle: trial.public_title,
-      briefSummary: trial.brief_summary,
-      gender: trial.gender,
-      status: trial.status,
-      sampleSize: trial.target_sample_size,
-      companyId: companyService.currentCompanyReturn()
-    });
+    var searched = ({ studyId: trial.id, studyTitle: trial.public_title, briefSummary: trial.brief_summary, gender: trial.gender, status: trial.status, sampleSize: trial.target_sample_size, companyId: companyService.currentCompanyReturn() });
     companyService.postStudyCompany(searched);
-    companyService.getAllStudies().then(function (response) {
+    setTimeout(function () {
+      $scope.getAllStudies = companyService.getAllStudies().then(function (response) {
+        $scope.companyStudies = [];
+        for (var i = 0; i < response.data.length; i++) {
+          if (companyService.currentCompanyReturn() == response.data[i].companyId) {
+            $scope.companyStudies.push(response.data[i]);
+          }
+        }
+      })
+    }, 1000);
+  }
+
+  //compnay deletes studies from backend, refreshes view
+  $scope.deleteStudy = function (study) {
+    companyService.deleteStudy(study.id);
+    setTimeout(function () {
+    $scope.getAllStudies = companyService.getAllStudies().then(function (response) {
       $scope.companyStudies = [];
       for (var i = 0; i < response.data.length; i++) {
         if (companyService.currentCompanyReturn() == response.data[i].companyId) {
@@ -131,10 +139,6 @@ app.controller("companyController", function ($scope, $state, $stateParams, comp
         }
       }
     })
-  }
-
-  //compnay deletes studies from backend
-  $scope.deleteStudy = function (study) {
-    companyService.deleteStudy(study.id)
+  }, 1000)
   }
 })
