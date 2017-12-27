@@ -163,7 +163,7 @@ width: 90%;
 }
 .companyDashboard{
 	padding: 35px; 
-	margin: 0;
+	margin-bottom: 10px;
 	border-radius: 10px;
 	border: 1px solid rgb(109, 109, 109);
 	background-color: white;
@@ -192,12 +192,7 @@ label {
 	margin-top: 10px
 }
 
-.companyStudies{
-	margin-top: 0px;
-	border-radius: 10px;
-	border: 1px solid rgb(109, 109, 109);
-	background-color: white;
-}
+
 
 .logo {
 	width: 160px;
