@@ -16,18 +16,28 @@
         <h4 class="text-center">
           <strong>City: </strong>{{currentCompany.city}}</h4>
       </div>
-        <div>
-          <p>Please search study your company is running by name: </p>
+      <div>
+        <p>Please search study your company is running by name: </p>
         <input type="text" ng-model="studyName">
         <button class="dashboard-button center-block btn btn-lg btn-info" ng-click="searchStudies(studyName)">Search Studies</button>
-        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="container companyStudies">
+    <h3>Current Studies Added</h3>
+    <div ng-repeat="study in companyStudies">
+      <h3>{{study.studyTitle}}</h3>
+      <h5>{{study.briefSummary}}</h5>
+      <button class="btn btn-danger" ng-click="deleteStudy(study)">Delete</button>
     </div>
   </div>
-</div>
 
-<div class="container">
-  <div class="container searchedStudyContainer" ng-repeat="trial in searchedTrials">
-    <h4>Title: {{trial.public_title}}</h4>
-    <button class="btn btn-primary" ng-click="addStudy(trial)">Add Study</button>
+
+  <div class="container ">
+    <div class="container searchedStudyContainer" ng-repeat="trial in searchedTrials">
+      <h4>Title: {{trial.public_title}}</h4>
+      <button class="btn btn-primary" ng-click="addStudy(trial)">Add Study</button>
+    </div>
   </div>
 </div>

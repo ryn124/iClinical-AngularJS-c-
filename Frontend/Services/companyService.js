@@ -31,7 +31,7 @@ app.service("companyService", function ($http) {
   }
   
   // login for company
-  var _currentCompanyId = 0;
+  var _currentCompanyId = 1;
   this.setCurrentCompany = function (id){
     _currentCompanyId = id;
   }
@@ -65,5 +65,9 @@ app.service("companyService", function ($http) {
     return $http.get("http://localhost:5000/api/studies");
   } 
 
+  //compnay deletes study from backend
+  this.deleteStudy = function(id){
+    return $http.delete("http://localhost:5000/api/studies", id)
+  }
 })
   

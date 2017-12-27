@@ -177,6 +177,7 @@ width: 90%;
 	border: 1px solid rgb(109, 109, 109);
 	background-color: white;
 	padding-bottom: 10px; 
+	float: left;
 }
 
 
@@ -193,11 +194,12 @@ label {
 }
 
 .companyStudies{
-	margin-top: 70px;
+	float: right; 
+	margin-top: 0px;
 	border-radius: 10px;
 	border: 1px solid rgb(109, 109, 109);
 	background-color: white;
-	width: 70%;
+	width: 44%;
 }
 
 .logo {
