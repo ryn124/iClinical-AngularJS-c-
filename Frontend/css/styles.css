@@ -191,3 +191,11 @@ label {
 .btn {
 	margin-top: 10px
 }
+
+.companyStudies{
+	margin-top: 70px;
+	border-radius: 10px;
+	border: 1px solid rgb(109, 109, 109);
+	background-color: white;
+	width: 70%;
+}

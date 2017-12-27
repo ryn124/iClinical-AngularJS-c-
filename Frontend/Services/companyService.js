@@ -55,5 +55,15 @@ app.service("companyService", function ($http) {
     return userName; 
   }
 
+  // posts new study for company 
+  this.postStudyCompany = function(trial){
+    return $http.post("http://localhost:5000/api/studies", trial)
+  }
+
+  //gets all saved studies from backend
+  this.getAllStudies = function(){
+    return $http.get("http://localhost:5000/api/studies");
+  } 
+
 })
   
