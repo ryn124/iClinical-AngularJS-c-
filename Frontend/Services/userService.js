@@ -7,6 +7,10 @@ app.service("userService", function ($http) {
   this.getUsers = function () {
     return $http.get("http://localhost:5000/api/users")
   }
+   // gets a user
+   this.getAUser = function (id) {
+    return $http.get("http://localhost:5000/api/users" + id)
+  }
   //redirect user to success page, holds user email to set currentuserID for success page.
   var userEmail = null;
   this.userEmail = function(name){

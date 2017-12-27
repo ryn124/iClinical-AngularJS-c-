@@ -17,14 +17,15 @@ app.controller("matchController", function ($scope, $state, $stateParams, matchS
   }
  
   // matching function test
-  $scope.matchingUserTest = function() {
+  $scope.matchingUser = function() {
     $scope.conditionMatch = "";
      // this is where the user is passed in
-    matchService.getUsers()
+    matchService.getAUser(userService.currentUserReturn())
       .then(function (response){
         var conds = [];
-        var userId = userService.currentUser();
-        $scope.currentUser = response.data[userId];
+
+        console.log(response)
+        $scope.currentUser = response.data;
         console.log($scope.currentUser);
         // this is where the conditions check will to be added to the search
         if($scope.currentUser.cancer == true){
@@ -80,26 +81,7 @@ app.controller("matchController", function ($scope, $state, $stateParams, matchS
         $scope.apiResponse = response.data.items;
         // this calls the dope function to match 1-100 study results to the users profile
         $scope.matchTrimmer($scope.apiResponse)
-      })
-      .catch(function (error){
-        console.log(error)
-      })
-      matchService.getApiTwo($scope.conditionMatch)
-      .then(function (response){
-        console.log(response.data.items)
-        $scope.apiResponse.push(response.data.items);
-        // this calls the dope function to match the 101 -200 study results to the users profile
-        $scope.matchTrimmer($scope.apiResponse)
-      })
-      .catch(function (error){
-        console.log(error)
-      })
-      matchService.getApiThree($scope.conditionMatch)
-      .then(function (response){
-        console.log(response.data.items)
-        $scope.apiResponse.push(response.data.items);
-        // this calls the dope function to match the 201-300 study results to the users profile
-        $scope.matchTrimmer($scope.apiResponse)
+        $scope.currentStudy = $scope.apiResponse[0]
       })
       .catch(function (error){
         console.log(error)
@@ -117,14 +99,14 @@ app.controller("matchController", function ($scope, $state, $stateParams, matchS
     console.log(theResults);
     // this checks if the study matches the users gender
     for (var i = theResults.length -1; i > 0; i--){
-      if(theResults[i].gender != $scope.currentUser.gender.toLowerCase() && theResults[i].gender !== "both" ){
+      if(theResults[i].gender !== $scope.currentUser.gender.toLowerCase() && theResults[i].gender !== "both" ){
         theResults.splice(i,1);
       }
     }
     // this checks if the users' age matches the study
     console.log(theResults);
     for (var i = theResults.length -1; i > 0; i--){
-      if(theResults[i].age_range != undefined){
+      if(theResults[i].age_range !== undefined){
         var max = theResults[i].age_range.max_age.slice(0, 2);
         var min = theResults[i].age_range.min_age.slice(0, 2);
         // console.log(min + " " + max);
@@ -132,7 +114,7 @@ app.controller("matchController", function ($scope, $state, $stateParams, matchS
           theResults.splice(i,1);
         }
         else if ($scope.currentUser.age < max){
-          if(max != "N/"){
+          if(max !== "N/"){
             theResults.splice(i,1);
           }
         }
@@ -140,8 +122,20 @@ app.controller("matchController", function ($scope, $state, $stateParams, matchS
     }
     console.log(theResults);  
   }
-
-    $scope.matchingUserTest();
-
+  $scope.matchingUser();
+  // below is what makes studies show one by one
+  $scope.studyIndex = 0;
+  $scope.currentStudy = {};
+  $scope.matchesView = true;
+  $scope.switchTest = function(){
+    $scope.studyIndex = $scope.studyIndex + 1;
+    console.log($scope.studyIndex);
+    if ($scope.studyIndex != $scope.apiResponse.length){
+      $scope.currentStudy = $scope.apiResponse[$scope.studyIndex];
+    }
+    else{
+      $scope.matchesView = false;
+    }
+  }
 })
   
