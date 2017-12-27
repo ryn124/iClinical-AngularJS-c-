@@ -124,7 +124,7 @@ app.controller("companyController", function ($scope, $state, $stateParams, comp
           }
         }
       })
-    }, 1000);
+    }, 500);
   }
 
   //compnay deletes studies from backend, refreshes view
@@ -139,6 +139,21 @@ app.controller("companyController", function ($scope, $state, $stateParams, comp
         }
       }
     })
-  }, 1000)
+  }, 500)
   }
+
+  //loads all company studies upon initial page load
+  $scope.getAllStudies = function(){
+    companyService.getAllStudies().then(function (response) {
+    $scope.companyStudies = [];
+    for (var i = 0; i < response.data.length; i++) {
+      if (companyService.currentCompanyReturn() == response.data[i].companyId) {
+        $scope.companyStudies.push(response.data[i]);
+      }
+    }
+  })
+  }
+ 
+  $scope.getAllStudies();
+
 })
