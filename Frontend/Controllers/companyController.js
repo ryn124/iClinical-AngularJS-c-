@@ -1,6 +1,6 @@
 app.controller("companyController", function ($scope, $state, $stateParams, companyService, matchService) {
 
-//hides form verification upon initial page load
+  //hides form verification upon initial page load
   $scope.companyName = true;
   $scope.companyUsername = true;
   $scope.companyPhone = true;
@@ -14,8 +14,7 @@ app.controller("companyController", function ($scope, $state, $stateParams, comp
       $scope.company = company
       console.log($scope.company)
     })
-  }
-  else {
+  } else {
     companyService.getCompanyById($stateParams.id, function (company) {
       $scope.company = company
       console.log($scope.company)
@@ -25,13 +24,13 @@ app.controller("companyController", function ($scope, $state, $stateParams, comp
   //submits company signup form
   $scope.newCompanySubmit = function () {
     // if any form input is empty then run next if else 
-    if (($scope.company.companyName == "")
-      || ($scope.company.companyUserName == "")
-      || ($scope.company.phone == "")
-      || ($scope.company.email == "")
-      || ($scope.company.companyPassword == "")
-      || ($scope.company.city == "")
-      || ($scope.company.description == "")
+    if (($scope.company.companyName == "") ||
+      ($scope.company.companyUserName == "") ||
+      ($scope.company.phone == "") ||
+      ($scope.company.email == "") ||
+      ($scope.company.companyPassword == "") ||
+      ($scope.company.city == "") ||
+      ($scope.company.description == "")
     ) {
       $scope.companyName = true;
       $scope.companyUsername = true;
@@ -79,56 +78,65 @@ app.controller("companyController", function ($scope, $state, $stateParams, comp
   }
 
   //success page redirect page load via id number to dashboard
-  $scope.companyRedirect = function(){
-    companyService.getAllCompanies().then(function(response){
-    for (var i = 0; i < response.data.length; i++){
-      if(response.data[i].companyUserName == companyService.returnUsername()){
-        companyService.setCurrentCompany(response.data[i].id);
-        $state.go("companyDashboard");
-        //ADD NG-HIDE AND UNHIDE COMPANY DASHBOARD ON NAVBAR HERE!!
+  $scope.companyRedirect = function () {
+    companyService.getAllCompanies().then(function (response) {
+      for (var i = 0; i < response.data.length; i++) {
+        if (response.data[i].companyUserName == companyService.returnUsername()) {
+          companyService.setCurrentCompany(response.data[i].id);
+          $state.go("companyDashboard");
+          //ADD NG-HIDE AND UNHIDE COMPANY DASHBOARD ON NAVBAR HERE!!
+        }
       }
-    }
-   })
+    })
   }
-  
+
   //loads company dashboard 
-$scope.loadCompanyDash = function(){
-companyService.getCurrentCompanyInfo().then(function(response){
-$scope.currentCompany = response.data
-})
-}
+  $scope.loadCompanyDash = function () {
+    companyService.getCurrentCompanyInfo().then(function (response) {
+      $scope.currentCompany = response.data
+    })
+  }
 
- $scope.loadCompanyDash();
+  $scope.loadCompanyDash();
 
- //searches trials and populates dashboard with search results
-$scope.searchStudies = function(trialName){
-  matchService.getApi(trialName).then(function(response){
-    $scope.searchedTrials = response.data.items;
-  })
-}
+  //searches trials and populates dashboard with search results
+  $scope.searchStudies = function (trialName) {
+    matchService.getApi(trialName).then(function (response) {
+      $scope.searchedTrials = response.data.items;
+    })
+  }
 
-// adds selected searched item to backend. Makes new instance of study in backend with company id in it
-$scope.addStudy = function(trial){
-  var searched = ({studyId: trial.id, studyTitle: trial.public_title, briefSummary: trial.brief_summary, gender: trial.gender, status: trial.status, sampleSize: trial.target_sample_size,  companyId: companyService.currentCompanyReturn()});
-  companyService.postStudyCompany(searched);
-  $state.go("companyStudies");
-}
+  // adds selected searched item to backend. Makes new instance of study in backend with company id in it
+  $scope.addStudy = function (trial) {
+    var searched = ({
+      studyId: trial.id,
+      studyTitle: trial.public_title,
+      briefSummary: trial.brief_summary,
+      gender: trial.gender,
+      status: trial.status,
+      sampleSize: trial.target_sample_size,
+      companyId: companyService.currentCompanyReturn()
+    });
+    companyService.postStudyCompany(searched);
+    $state.go("companyStudies");
+  }
 
-//populates company study in company studies view. 
-$scope.showStudies = function(){
-  companyService.getAllStudies().then(function(response){
-    var arr = [];
-    for(var i = 0; i < response.data.length; i++){
-      if(companyService.currentCompanyReturn == response.data[i].companyId){
-        arr.push(response.data[i].studyTitle);
+  //populates company study in company studies view. 
+  $scope.showStudies = function () {
+    companyService.getAllStudies().then(function (response) {
+      var arr = [];
+      for (var i = 0; i < response.data.length; i++) {
+        if (companyService.currentCompanyReturn == response.data[i].companyId) {
+          arr.push(response.data[i].studyTitle);
+        }
       }
-    }
-    console.log(companyService.currentCompanyReturn);
-  })
-}
+      console.log(companyService.currentCompanyReturn);
+    })
+  }
 
-$scope.showStudies(); 
+  $scope.showStudies();
 
 
- 
+
+
 })
