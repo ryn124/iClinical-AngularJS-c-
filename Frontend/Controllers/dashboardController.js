@@ -1,14 +1,14 @@
 app.controller("dashboardController", function ($scope, $state, $stateParams, userService, matchService) {
   // loads the current user
-  if (userService.currentUserReturn() == 0){
+  if (userService.currentUserReturn() == 0) {
     $state.go("home");
   }
-  $scope.loadUser = function (){
+  $scope.loadUser = function () {
     userService.getCurrentUserInfo()
-    .then(function(response){
-      console.log(response.data)
-      $scope.loadedUser = response.data;
-    })
+      .then(function (response) {
+        console.log(response.data)
+        $scope.loadedUser = response.data;
+      })
   }
   $scope.loadUser();
 })
