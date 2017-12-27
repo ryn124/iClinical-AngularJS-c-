@@ -115,6 +115,11 @@ app.controller("companyController", function ($scope, $state, $stateParams, comp
   $scope.addStudy = function (trial) {
     var searched = ({ studyId: trial.id, studyTitle: trial.public_title, briefSummary: trial.brief_summary, gender: trial.gender, status: trial.status, sampleSize: trial.target_sample_size, companyId: companyService.currentCompanyReturn() });
     companyService.postStudyCompany(searched);
+    for (var i = 0; i < $scope.searchedTrials.length; i++){
+      if(trial.id == $scope.searchedTrials[i].id){
+        $scope.searchedTrials.splice(i, 1);
+      }
+    }
     setTimeout(function () {
       $scope.getAllStudies = companyService.getAllStudies().then(function (response) {
         $scope.companyStudies = [];
