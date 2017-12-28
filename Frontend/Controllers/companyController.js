@@ -13,17 +13,22 @@ app.controller("companyController", function ($scope, $state, $stateParams, comp
   $scope.companyPass = true;
   $scope.companyCity = true;
   $scope.companyDescription = true;
+  $scope.company = {};
 
-  if ($stateParams.id == "" || $stateParams.id == undefined || $stateParams.id == null) {
-    companyService.getCompanyById($stateParams.id, function (company) {
-      $scope.company = company
-      console.log($scope.company)
-    })
+//makes company sign up form empty or edit filled out depending on if currentCompany is logged in. 
+  if (companyService.currentCompanyReturn == 0) {
+    // companyService.getCompanyById($stateParams.id, function (company) {
+    //   $scope.company = company
+    //   console.log($scope.company)
+    // })
   } else {
-    companyService.getCompanyById($stateParams.id, function (company) {
-      $scope.company = company
-      console.log($scope.company)
-    })
+    // companyService.getCompanyById($stateParams.id, function (company) {
+    //   $scope.company = company
+    //   console.log($scope.company)
+      companyService.loadEditCompany().then(function (response) {
+        $scope.company = response.data;
+        console.log($scope.company)
+      })
   }
 
   //submits company signup form
@@ -173,7 +178,7 @@ app.controller("companyController", function ($scope, $state, $stateParams, comp
     })
   }
 
-  $scope.editCompanyForm();
+
 
   //hides or unhides submit or submit edit button in company signup form
   $scope.companyLoggedIn = function () {
@@ -196,5 +201,30 @@ $scope.editCompanySubmit = function(id, company){
     $state.go("companyDashboard");
  },500)
 }
+
+//find all of company's studies and extract studyId
+
+$scope.findMatchedUsers = function(){
+  companyService.getAllStudies().then(function(response){
+    var listCurrentStudies = [];
+    var userWithCompanyStudies = [];
+    //get all studyID from current company
+    for(var i = 0; i < response.data.length; i++){
+      if(companyService.currentCompanyReturn() == response.data[i].companyId){
+        listCurrentStudies.push(response.data[i].studyId)
+      }
+    }
+    //finds all users by ID != 0 in all studies that matches studies in copmany list of current Studies.
+    for(var i = 0; i < listCurrentStudies.length; i++){
+      for(var j = 0; j < response.data.length; j++){
+        if(listCurrentStudies[i] == response.data[j].studyId && response.data[j].userId != 0){
+          userWithCompanyStudies.push({userName: response.data[j].userFirstName + " " + response.data[j].userLastName, email: response.data[j].userEmail, city: response.data[j].userCity, studyTitle: response.data[j].studyTitle})
+        }
+      }
+    }
+    $scope.studies = userWithCompanyStudies; 
+  })
+}
+$scope.findMatchedUsers();
 
 })
