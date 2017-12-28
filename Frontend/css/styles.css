@@ -92,6 +92,7 @@ label {
 	margin-bottom: 5px;
 	margin-top: 10px;
 	font-weight: 700;
+	font-family: 'Josefin Sans', sans-serif;
 }
 
 .nav-items {
@@ -111,32 +112,44 @@ label {
 .form-links a {
 	color: #fff;
 }
-.formContainer{
+
+.formContainer {
 	margin-top: 10px;
 }
 
-.signUpHeader{
+.signUpHeader {
 	text-align: center;
+	font-family: 'Monoton', cursive;
 }
-.h1, h1 {
+
+.SignUpHeadings {
+	font-family: 'Muli', sans-serif
+}
+
+.h1,
+h1 {
 	font-size: 50px;
 	margin-top: -16px;
 	margin-bottom: 36px;
 }
-.dashboard-container{
+
+.dashboard-container {
 	border-radius: 10px;
 	border: 1px solid rgb(109, 109, 109);
 	background-color: white;
 	width: 70%;
 }
-.dashboard-name{
+
+.dashboard-name {
 	padding: 20px 0px 20px 0px;
 }
-.dashboard-button{
+
+.dashboard-button {
 	margin-top: 50px;
 	margin-bottom: 30px;
 }
-.studies-container{
+
+.studies-container {
 	border-radius: 10px;
 	border: 1px solid rgb(109, 109, 109);
 	background-color: white;
@@ -146,39 +159,39 @@ label {
 	padding: 5%;
 }
 
-.companySignup{
-	color:rgb(75, 75, 75) !important;
-}
-.companyContainerView{
-width: 90%;
+.companySignup {
+	color: rgb(75, 75, 75) !important;
 }
 
-.companyStudySidebar{
-	margin-left: 10px; 
+.companyContainerView {
+	width: 90%;
+}
+
+.companyStudySidebar {
+	margin-left: 10px;
 	border-radius: 10px;
 	border: 1px solid rgb(109, 109, 109);
 	background-color: white;
-	width: 39%; 
-	float: right; 
+	width: 39%;
+	float: right;
 }
-.companyDashboard{
-	padding: 35px; 
+
+.companyDashboard {
+	padding: 35px;
 	margin-bottom: 10px;
 	border-radius: 10px;
 	border: 1px solid rgb(109, 109, 109);
 	background-color: white;
-
 }
 
-.searchedStudyContainer{
-	margin-top: 20px; 
+.searchedStudyContainer {
+	margin-top: 20px;
 	border-radius: 10px;
 	border: 1px solid rgb(109, 109, 109);
 	background-color: white;
-	padding-bottom: 10px; 
+	padding-bottom: 10px;
 	float: left;
 }
-
 
 label {
 	display: inline-block;
@@ -189,14 +202,16 @@ label {
 }
 
 .btn {
-	margin-top: 10px
+	margin-top: 10px;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
-
-
 
 .logo {
 	width: 160px;
 	height: 145px;
 	margin-top: -60px;
 	margin-bottom: -112px;
+}
+.userEmailHeading{
+	font-family: 'Josefin Sans', sans-serif;
 }
