@@ -1,15 +1,15 @@
-<h1>dashboard view</h1>
+
 <div class="container">
 
   <div class="container dashboard-container">
-    <div class="dashboard-name">
-      <h3 class="text-center">
+    <div class="dashboard-name signUpHeader">
+      <h2 class="text-center">
         <strong>{{loadedUser.firstName}} {{loadedUser.lastName}}</strong>
-      </h3>
-      <h5 class="text-center">{{loadedUser.email}}</h5> 
+      </h2>
+      <h5 class="text-center userEmailHeading">{{loadedUser.email}}</h5>
       <button class="btn" ng-click="editUser()">Edit</button>
     </div>
-    <div class="row">
+    <div class="row SignUpHeadings">
       <div class="col-md-4">
         <h4 class="text-center"><strong>Age: </strong>{{loadedUser.age}}</h4>
       </div>

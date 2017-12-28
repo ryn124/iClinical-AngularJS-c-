@@ -1,15 +1,15 @@
-<h1>Company dashboard view</h1>
+
 <div class="container companyContainerView ">
 
   <div class="companyDashboard col-md-12">
 
-    <div class="dashboard-name">
+    <div class="dashboard-name signUpHeader">
       <h1 class="text-center">
         <strong>{{currentCompany.companyName}}</strong>
       </h1>
     </div>
 
-    <div class="row">
+    <div class="row SignUpHeadings">
       <div class="col-md-4">
         <h4 class="text-center">
           <strong>Company User Name: </strong>{{currentCompany.companyUserName}}</h4>
@@ -20,7 +20,7 @@
           <strong>City: </strong>{{currentCompany.city}}</h4>
       </div>
       <div class="container col-md-4">
-        <button class="btn" ng-click="editCompany()">Edit Profile</button>
+        <button class="btn btn-md pull-right editCompany" ng-click="editCompany()">Edit Profile</button>
       </div>
       
     </div>
