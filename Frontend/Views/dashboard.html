@@ -7,6 +7,7 @@
         <strong>{{loadedUser.firstName}} {{loadedUser.lastName}}</strong>
       </h3>
       <h5 class="text-center userEmailHeading">{{loadedUser.email}}</h5>
+      <button class="btn" ng-click="editUser()">Edit</button>
     </div>
     <div class="row SignUpHeadings">
       <div class="col-md-4">
@@ -18,6 +19,7 @@
       <div class="col-md-4">
         <h4 class="text-center"><strong>City: </strong>{{loadedUser.city}}</h4>
       </div>
+     
     </div>
     <button class="dashboard-button center-block btn btn-lg btn-info" ui-sref="matches">Find Study Matches</button>
   </div>

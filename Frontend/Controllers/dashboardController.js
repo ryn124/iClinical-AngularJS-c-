@@ -11,4 +11,10 @@ app.controller("dashboardController", function ($scope, $state, $stateParams, us
       })
   }
   $scope.loadUser();
+
+  //edit user button
+  $scope.editUser = function () {
+    $state.go("userSignup");
+  }
+
 })

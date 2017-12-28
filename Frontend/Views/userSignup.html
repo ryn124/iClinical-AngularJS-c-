@@ -209,8 +209,8 @@
 
     <!-- end form -->
     <div class="submitDiv container">
-      <button class="btn btn-primary pull-right" ng-click="newUserSubmit()">Submit</button>
-
+      <button class="btn btn-primary pull-right" ng-click="newUserSubmit()" ng-hide="userSubmitButton">Submit</button>
+      <button class="btn btn-primary pull-right" ng-click="newUserEditSubmit(user)" ng-hide="userEditButton">Submit Edit</button>
     </div>
 
   </div>

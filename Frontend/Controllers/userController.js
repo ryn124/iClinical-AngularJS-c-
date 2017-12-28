@@ -90,10 +90,35 @@ app.controller("userController", function ($scope, $state, $stateParams, userSer
     })
   }
 
-
-
   
+  // populates edit user signup form for edit
+  $scope.editUserForm = function () {
+    userService.loadEditUser().then(function (response) {
+      console.log(response.data)
+      $scope.user = response.data;
+    })
+  }
 
+  $scope.editUserForm();
+
+  //hides or unhides submit or submit edit button in user signup form
+  $scope.userLoggedIn = function () {
+    if (userService.currentUserReturn() != null) {
+      $scope.userSubmitButton = true;
+      $scope.userEditButton = false;
+    }
+    else {
+      $scope.userSubmitButton = false;
+      $scope.userEditButton = true;
+    }
+  }
+
+  $scope.userLoggedIn();
+
+//submitEdit button
+$scope.newUserEditSubmit = function(user){
+ userService.updateUser(user);
+}
 
 
 })
