@@ -69,5 +69,15 @@ app.service("companyService", function ($http) {
   this.deleteStudy = function(id){
     return $http.delete("http://localhost:5000/api/studies/" + id)
   }
+
+  //sets up company info for edit submission
+  this.loadEditCompany = function(){
+    return $http.get("http://localhost:5000/api/companies/" + _currentCompanyId)
+  }
+
+  //submits editteed company form
+  this.updateCompany = function(id, company){
+    return $http.put("http://localhost:5000/api/companies/" + id, company)
+  }
 })
   

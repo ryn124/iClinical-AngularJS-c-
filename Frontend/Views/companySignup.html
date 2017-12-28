@@ -48,7 +48,11 @@
 
 
     <div class="container">
-      <button class="btn btn-primary" ng-click="newCompanySubmit()">SUBMIT</button>
+      <button class="btn btn-primary" ng-click="newCompanySubmit()" ng-hide="submit">SUBMIT</button>
     </div>
+
+    <div class="container">
+        <button class="btn btn-primary" ng-click="editCompanySubmit(company.id, company)" ng-hide="submitEdit">SUBMIT EDIT</button>
+      </div>
 
   </div>

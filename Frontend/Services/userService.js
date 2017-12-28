@@ -79,4 +79,14 @@ app.service("userService", function ($http) {
       //$http using id to get valid user pass valid user back to controller using callback function
     }
   }
+
+  //loads userId
+  this.loadEditUser = function(){
+    return $http.get("http://localhost:5000/api/users/" + _currentUserId)
+  }
+
+  // sends updated user
+  this.updateUser = function(user){
+    return $http.put("http://localhost:5000/api/users/" + _currentUserId, user)
+  }
 })

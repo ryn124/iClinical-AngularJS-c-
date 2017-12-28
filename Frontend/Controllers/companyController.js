@@ -115,8 +115,8 @@ app.controller("companyController", function ($scope, $state, $stateParams, comp
   $scope.addStudy = function (trial) {
     var searched = ({ studyId: trial.id, studyTitle: trial.public_title, briefSummary: trial.brief_summary, gender: trial.gender, status: trial.status, sampleSize: trial.target_sample_size, companyId: companyService.currentCompanyReturn() });
     companyService.postStudyCompany(searched);
-    for (var i = 0; i < $scope.searchedTrials.length; i++){
-      if(trial.id == $scope.searchedTrials[i].id){
+    for (var i = 0; i < $scope.searchedTrials.length; i++) {
+      if (trial.id == $scope.searchedTrials[i].id) {
         $scope.searchedTrials.splice(i, 1);
       }
     }
@@ -136,7 +136,20 @@ app.controller("companyController", function ($scope, $state, $stateParams, comp
   $scope.deleteStudy = function (study) {
     companyService.deleteStudy(study.id);
     setTimeout(function () {
-    $scope.getAllStudies = companyService.getAllStudies().then(function (response) {
+      $scope.getAllStudies = companyService.getAllStudies().then(function (response) {
+        $scope.companyStudies = [];
+        for (var i = 0; i < response.data.length; i++) {
+          if (companyService.currentCompanyReturn() == response.data[i].companyId) {
+            $scope.companyStudies.push(response.data[i]);
+          }
+        }
+      })
+    }, 500)
+  }
+
+  //loads all company studies upon initial page load
+  $scope.getAllStudies = function () {
+    companyService.getAllStudies().then(function (response) {
       $scope.companyStudies = [];
       for (var i = 0; i < response.data.length; i++) {
         if (companyService.currentCompanyReturn() == response.data[i].companyId) {
@@ -144,21 +157,40 @@ app.controller("companyController", function ($scope, $state, $stateParams, comp
         }
       }
     })
-  }, 500)
   }
 
-  //loads all company studies upon initial page load
-  $scope.getAllStudies = function(){
-    companyService.getAllStudies().then(function (response) {
-    $scope.companyStudies = [];
-    for (var i = 0; i < response.data.length; i++) {
-      if (companyService.currentCompanyReturn() == response.data[i].companyId) {
-        $scope.companyStudies.push(response.data[i]);
-      }
-    }
-  })
-  }
- 
   $scope.getAllStudies();
 
+  //edit company button
+  $scope.editCompany = function () {
+    $state.go("companySignup")
+  }
+
+  // populates edit company signup form for edit
+  $scope.editCompanyForm = function () {
+    companyService.loadEditCompany().then(function (response) {
+      $scope.company = response.data;
+    })
+  }
+
+  $scope.editCompanyForm();
+
+  //hides or unhides submit or submit edit button in company signup form
+  $scope.companyLoggedIn = function () {
+    if (companyService.currentCompanyReturn() != null) {
+      $scope.submit = true;
+      $scope.submitEdit = false;
+    }
+    else {
+      $scope.submit = false;
+      $scope.submitEdit = true;
+    }
+  }
+
+  $scope.companyLoggedIn();
+
+//submitEdit button
+$scope.editCompanySubmit = function(id, company){
+ companyService.updateCompany(id, company);
+}
 })
