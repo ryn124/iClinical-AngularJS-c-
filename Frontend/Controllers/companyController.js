@@ -1,9 +1,9 @@
 app.controller("companyController", function ($scope, $state, $stateParams, companyService, matchService, userService) {
-  if (companyService.currentCompanyReturn() == 0 && userService.currentUserReturn() == 0) {
-    $state.go("dashboard");
-  } else if (companyService.currentCompanyReturn() == 0) {
-    $state.go("home");
-  }
+  // if (companyService.currentCompanyReturn() == 0 && userService.currentUserReturn() == 0) {
+  //   $state.go("dashboard");
+  // } else if (companyService.currentCompanyReturn() == 0) {
+  //   $state.go("home");
+  // }
 
   //hides form verification upon initial page load
   $scope.companyName = true;
@@ -89,7 +89,6 @@ app.controller("companyController", function ($scope, $state, $stateParams, comp
         if (response.data[i].companyUserName == companyService.returnUsername()) {
           companyService.setCurrentCompany(response.data[i].id);
           $state.go("companyDashboard");
-          //ADD NG-HIDE AND UNHIDE COMPANY DASHBOARD ON NAVBAR HERE!!
         }
       }
     })
@@ -163,13 +162,14 @@ app.controller("companyController", function ($scope, $state, $stateParams, comp
 
   //edit company button
   $scope.editCompany = function () {
-    $state.go("companySignup")
+    $state.go("companySignup");
   }
 
   // populates edit company signup form for edit
   $scope.editCompanyForm = function () {
     companyService.loadEditCompany().then(function (response) {
       $scope.company = response.data;
+      console.log($scope.company)
     })
   }
 
@@ -177,7 +177,7 @@ app.controller("companyController", function ($scope, $state, $stateParams, comp
 
   //hides or unhides submit or submit edit button in company signup form
   $scope.companyLoggedIn = function () {
-    if (companyService.currentCompanyReturn() != null) {
+    if (companyService.currentCompanyReturn() != 0) {
       $scope.submit = true;
       $scope.submitEdit = false;
     }
@@ -192,5 +192,9 @@ app.controller("companyController", function ($scope, $state, $stateParams, comp
 //submitEdit button
 $scope.editCompanySubmit = function(id, company){
  companyService.updateCompany(id, company);
+ setTimeout(function () {
+    $state.go("companyDashboard");
+ },500)
 }
+
 })
